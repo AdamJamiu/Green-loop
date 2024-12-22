@@ -125,3 +125,35 @@
 .text-slide-in {
   animation: slideIn 0.5s ease-out; /* Use slideIn animation with 0.5s duration */
 }
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleBackground {
+  0% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.scale-animation {
+  background-image: url("/path/to/your/image.jpg"); /* Your background image */
+  animation: scaleBackground 10s linear infinite;
+  transform-origin: center;
+}

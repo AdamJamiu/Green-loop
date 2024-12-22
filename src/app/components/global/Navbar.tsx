@@ -5,6 +5,7 @@ import logo from "../../../images/pkam-logo.svg";
 import NavDropdown from "../navbar/NavDropdown";
 import { help, products } from "@/data/nav";
 import { useEffect, useState } from "react";
+import { RiMenu3Fill } from "react-icons/ri";
 
 const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -27,13 +28,19 @@ const Navbar = () => {
     <nav
       className={`${
         scrollPosition > 40
-          ? "backdrop-blur-md py-7 shadow-lg"
-          : "bg-[#E2F6DF] pt-12"
-      } w-full py-5 px-4 md:px-10 lg:pl-40 lg:pr-52 md:pr-40 flex justify-between items-center font-satoshi sticky top-0 right-0 left-0 ease duration-200 transition-all z-50`}
+          ? "backdrop-blur-sm shadow-lg bg-gray-100"
+          : "bg-[#E2F6DF] md:pt-4"
+      } w-full px-4 md:px-10 lg:pl-40 lg:pr-52 md:pr-40 flex justify-between items-center font-satoshi sticky top-0 right-0 left-0 ease duration-200 transition-all z-50`}
     >
-      <Image src={logo} alt="logo" width={120} height={120} />
+      <Image
+        src={logo}
+        alt="logo"
+        width={120}
+        height={120}
+        className="w-[100px] h-[60px] md:w-[120px] md:h-[90px]"
+      />
 
-      <div className="flex space-x-12 text-sm items-center">
+      <div className="md:flex space-x-12 text-sm items-center hidden">
         <NavDropdown title="Company" data={products} />
         <NavDropdown title="Products" data={products} />
         <NavDropdown data={help} title="Help Center" />
@@ -53,6 +60,9 @@ const Navbar = () => {
           </button>
         </div>
       </div>
+      <button className="text-primary_success md:hidden block">
+        <RiMenu3Fill size={26} />
+      </button>
     </nav>
   );
 };

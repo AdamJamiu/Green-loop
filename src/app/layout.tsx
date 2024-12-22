@@ -4,6 +4,12 @@ import "./globals.css";
 import Navbar from "./components/global/Navbar";
 import Footer from "./components/global/Footer";
 
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
@@ -31,9 +37,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${raleway.variable} antialiased`}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <main className="bg-[#F1F1F8]">
+          <Navbar />
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   );

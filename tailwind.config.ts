@@ -23,6 +23,7 @@ export default {
         tahooma: "Tahooma",
         raleway: "var(--font-raleway)",
         satoshi: "Satoshi-Medium",
+        satoshi_Variable: "Satoshi-Light",
       },
     },
   },

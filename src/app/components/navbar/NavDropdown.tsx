@@ -32,7 +32,7 @@ const NavDropdown = ({ title, data }: TNavDropdown) => {
           open
             ? "text-primary_success border-b-gray-800"
             : "text-black border-transparent"
-        } border-b pb-2 flex items-center gap-2 text-sm`}
+        } border-b pb-2 flex items-center gap-2 text-sm hover:text-gray-600 ease transition-all`}
         onClick={() => setOpen(true)}
       >
         {title}

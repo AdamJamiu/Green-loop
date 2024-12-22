@@ -16,9 +16,9 @@ const TextLoopAnimation = () => {
 
   return (
     // <div className="text-loop-container">
-    <span key={currentTextIndex} className="text-slide-in">
+    <div key={currentTextIndex} className="text-slide-in p-0 m-0">
       {TEXTS[currentTextIndex]}
-    </span>
+    </div>
     // </div>
   );
 };
