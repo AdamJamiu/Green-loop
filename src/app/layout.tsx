@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins, Raleway } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/global/Navbar";
-import Footer from "./components/global/Footer";
+// import Navbar from "./components/global/Navbar";
+// import Footer from "./components/global/Footer";
 
 // Import Swiper styles
 import "swiper/css";
@@ -38,9 +38,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.variable} ${raleway.variable} antialiased`}>
         <main className="bg-[#F1F1F8]">
-          <Navbar />
+          {/* <Navbar /> */}
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </main>
       </body>
     </html>

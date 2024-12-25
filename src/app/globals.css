@@ -152,8 +152,6 @@
   }
 }
 
-.scale-animation {
-  background-image: url("/path/to/your/image.jpg"); /* Your background image */
-  animation: scaleBackground 10s linear infinite;
-  transform-origin: center;
+.pattern-1 {
+  background-image: url("/pattern-1.svg");
 }

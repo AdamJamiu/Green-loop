@@ -53,7 +53,7 @@ const WhoWeserve = () => {
           <SwiperSlide className="">
             <PartnerCard
               image="https://img.freepik.com/free-photo/medium-shot-smiley-woman-outdoors_23-2149351946.jpg?t=st=1734888461~exp=1734892061~hmac=f7a0bddc64658795b9ee4d752c55d4356860e19a71c2803bb5409b85d534541f&w=996"
-              description="Pakam aims to improve citizens engagement in waste management through waste on-demand solutions and incentivisation, allowing citizens the opportunity to make sense of their waste either through our Earn-as-You Waste (Pakam Recycling) or Pay-as-You Waste (Pakam Waste Disposal) eco-system application."
+              description="Pakam aims to improve citizens engagement in waste management through waste on-demand solutions and incentivisation."
               title="Citizens"
             />
           </SwiperSlide>
@@ -74,7 +74,7 @@ const WhoWeserve = () => {
           <SwiperSlide className="">
             <PartnerCard
               image="https://img.freepik.com/free-photo/medium-shot-smiley-woman-outdoors_23-2149351946.jpg?t=st=1734888461~exp=1734892061~hmac=f7a0bddc64658795b9ee4d752c55d4356860e19a71c2803bb5409b85d534541f&w=996"
-              description="Pakam aims to improve citizens engagement in waste management through waste on-demand solutions and incentivisation, allowing citizens the opportunity to make sense of their waste either through our Earn-as-You Waste (Pakam Recycling) or Pay-as-You Waste (Pakam Waste Disposal) eco-system application."
+              description="Pakam aims to improve citizens engagement in waste management through waste on-demand solutions and incentivisation."
               title="Citizens"
             />
           </SwiperSlide>
