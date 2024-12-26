@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import logo from "../../../images/pkam-logo.svg";
+import logo from "../../../images/greenloop.png";
 import NavDropdown from "../navbar/NavDropdown";
 import { help, products } from "@/data/nav";
 import { useEffect, useState } from "react";
@@ -30,7 +30,7 @@ const Navbar = () => {
       className={`${
         scrollPosition > 40
           ? "backdrop-blur-sm shadow-lg bg-gray-100"
-          : "bg-transparent md:pt-4"
+          : "bg-[#E2F6DF] md:pt-4"
       } w-full px-4 md:px-10 lg:pl-40 lg:pr-52 md:pr-40 flex justify-between items-center font-satoshi sticky top-0 right-0 left-0 ease duration-200 transition-all z-50`}
     >
       <Image

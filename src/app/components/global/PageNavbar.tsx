@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import logo from "../../../images/pkam-logo.svg";
+import logo from "../../../images/greenloop.png";
 import logo_white from "../../../images/pakam_logo_white.png";
 import NavDropdown from "../navbar/NavDropdown";
 import { help, products } from "@/data/nav";
@@ -31,7 +31,7 @@ const PageNavbar = () => {
       className={`${
         scrollPosition >= 40
           ? "backdrop-blur-sm shadow-lg bg-gray-100 text-[#1f2937]"
-          : "bg-transparent md:pt-7 text-white"
+          : "bg-[#1A1F1A] pt-5 md:pt-7 text-white"
       } w-full px-4 md:px-10 lg:pl-40 lg:pr-52 md:pr-40 flex justify-between items-center font-satoshi sticky top-0 right-0 left-0 ease duration-200 transition-all z-50`}
     >
       {scrollPosition >= 40 ? (
@@ -79,7 +79,11 @@ const PageNavbar = () => {
           </Link>
         </div>
       </div>
-      <button className="text-primary_success md:hidden block">
+      <button
+        className={`${
+          scrollPosition >= 40 ? "text-primary_success" : "text-white"
+        } md:hidden block`}
+      >
         <RiMenu3Fill size={26} />
       </button>
     </nav>

@@ -54,7 +54,7 @@ export default function Home() {
                 <span className="text-[#14261c]">into value</span>
               </div>
               <h1 className="md:font-bold font-extrabold  text-[#14261c] text-4xl sm:text-5xl md:text-6xl">
-                With Wecyclers
+                With GreenLoop
               </h1>
             </div>
 

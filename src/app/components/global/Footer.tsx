@@ -34,7 +34,8 @@ const Footer = () => {
               className="w-[100px] md:w-[120px]"
             />
             <p className="text-white font-satoshi_Variable mt-8 mb-4">
-              Pakam enabling people, planet and profit
+              GreenLoop Waste Services Limited is dedicated to turning waste
+              into value.
             </p>
             <div className="flex justify-start items-center gap-2">
               <Image
@@ -113,7 +114,7 @@ const Footer = () => {
                 href="mailto:support@example.com"
                 aria-label="Call us at +1 234 567 890"
               >
-                info@weecooler.ng
+                info@greenloop.ng
               </a>
               <a href="tel:+1234567890" aria-label="Call us at +1 234 567 890">
                 +1 (234) 567-890
@@ -123,7 +124,7 @@ const Footer = () => {
         </div>
 
         <div className="w-full text-center border-t border-t-[#cce6cc] pt-4">
-          © 2024 Wecyclers. All rights reserved.
+          © 2024 GreenLoop. All rights reserved.
         </div>
       </div>
     </footer>

@@ -155,3 +155,22 @@
 .pattern-1 {
   background-image: url("/pattern-1.svg");
 }
+
+.custom-scroll::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Handle on hover */
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}

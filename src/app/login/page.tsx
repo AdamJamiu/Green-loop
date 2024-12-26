@@ -67,7 +67,7 @@ const Page = () => {
           </button>
 
           <div className="flex justify-start items-center gap-2 mt-5 font-satoshi_Variable">
-            <p>New to wecycler?</p>
+            <p>New to GreenLoop?</p>
             <Link
               href="/login"
               className="italic text-blue-600 hover:underline"

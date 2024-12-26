@@ -53,28 +53,28 @@ const WhoWeserve = () => {
           <SwiperSlide className="">
             <PartnerCard
               image="https://img.freepik.com/free-photo/medium-shot-smiley-woman-outdoors_23-2149351946.jpg?t=st=1734888461~exp=1734892061~hmac=f7a0bddc64658795b9ee4d752c55d4356860e19a71c2803bb5409b85d534541f&w=996"
-              description="Pakam aims to improve citizens engagement in waste management through waste on-demand solutions and incentivisation."
+              description="GreenLoop aims to improve citizens engagement in waste management through waste on-demand solutions and incentivisation."
               title="Citizens"
             />
           </SwiperSlide>
           <SwiperSlide className="">
             <PartnerCard
               image="https://img.freepik.com/free-photo/smiling-woman-writing-notes-tablet-digital-device_53876-128806.jpg?t=st=1734889609~exp=1734893209~hmac=f7f2e2dcef4295982807f659c6414325513afb328ba9a9d7b309cbe48ecf84d0&w=996"
-              description="Pakam aims to enable the waste management ecosystem businesses by optimizing their collections and operations to ensure a seamless business transaction flow."
+              description="GreenLoop aims to enable the waste management ecosystem businesses by optimizing their collections and operations to ensure a seamless business transaction flow."
               title="Business Operators"
             />
           </SwiperSlide>
           <SwiperSlide className="">
             <PartnerCard
               image="https://img.freepik.com/free-photo/people-taking-part-business-event_23-2149346619.jpg?t=st=1734889712~exp=1734893312~hmac=a83d6f5250ad13546ba51ab09dc64d5b0799bd309ffa6f56d9b1d608f90b6d1b&w=996"
-              description="Pakam is proffering solutions for the government and its agencies to build data for insight, track inclusion and build resilience through our smart enforcement and reporting platform."
+              description="GreenLoop is proffering solutions for the government and its agencies to build data for insight, track inclusion and build resilience through our smart enforcement and reporting platform."
               title="Agencies"
             />
           </SwiperSlide>
           <SwiperSlide className="">
             <PartnerCard
               image="https://img.freepik.com/free-photo/medium-shot-smiley-woman-outdoors_23-2149351946.jpg?t=st=1734888461~exp=1734892061~hmac=f7a0bddc64658795b9ee4d752c55d4356860e19a71c2803bb5409b85d534541f&w=996"
-              description="Pakam aims to improve citizens engagement in waste management through waste on-demand solutions and incentivisation."
+              description="GreenLoop aims to improve citizens engagement in waste management through waste on-demand solutions and incentivisation."
               title="Citizens"
             />
           </SwiperSlide>

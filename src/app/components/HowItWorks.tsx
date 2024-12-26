@@ -22,7 +22,7 @@ const HowItWorks = () => {
           <HowItWorkCard
             Icon={FaUserPlus}
             title="Create an account"
-            description="Get the Pakam Household App from Google Play Store or IOS App Store"
+            description="Get the GreenLoop Household App from Google Play Store or IOS App Store"
           />
           <HowItWorkCard
             Icon={GiConfirmed}

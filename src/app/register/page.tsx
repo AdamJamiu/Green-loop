@@ -83,7 +83,7 @@ const Page: PageType = () => {
           <div className="mt-7 flex justify-start items-start gap-3 w-full">
             <input type="checkbox" className="flex" />
             <div className="font-satoshi_Variable flex gap-1 items-start justify-start">
-              I agree to Wecycler's{" "}
+              I agree to GreenLoop's{" "}
               <Link
                 className="italic text-blue-600 hover:underline"
                 href="/termsAndConditions"
