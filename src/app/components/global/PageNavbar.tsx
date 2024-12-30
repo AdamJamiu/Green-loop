@@ -2,15 +2,16 @@
 
 import Image from "next/image";
 import logo from "../../../images/greenloop.png";
-import logo_white from "../../../images/pakam_logo_white.png";
 import NavDropdown from "../navbar/NavDropdown";
 import { help, products } from "@/data/nav";
 import { useEffect, useState } from "react";
 import { RiMenu3Fill } from "react-icons/ri";
 import Link from "next/link";
+import MobileNav from "./MobileNav";
 
 const PageNavbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [isMobileNvOpen, setIsMobileNvOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,36 +31,43 @@ const PageNavbar = () => {
     <nav
       className={`${
         scrollPosition >= 40
-          ? "backdrop-blur-sm shadow-lg bg-gray-100 text-[#1f2937]"
-          : "bg-[#1A1F1A] pt-5 md:pt-7 text-white"
-      } w-full px-4 md:px-10 lg:pl-40 lg:pr-52 md:pr-40 flex justify-between items-center font-satoshi sticky top-0 right-0 left-0 ease duration-200 transition-all z-50`}
+          ? "backdrop-blur-sm shadow-lg bg-gray-100 text-[#1f2937] py-3 md:py-8"
+          : "bg-[#1A1F1A] py-7 text-white"
+      } w-full px-4 lg:px-10 xl:pl-40 2xl:pr-52 xl:pr-40 flex justify-between items-center font-satoshi sticky top-0 right-0 left-0 ease duration-200 transition-all z-50`}
     >
-      {scrollPosition >= 40 ? (
-        <Image
-          src={logo}
-          alt="logo"
-          width={120}
-          height={120}
-          className="w-[100px] h-[60px] md:w-[120px] md:h-[90px]"
-        />
-      ) : (
-        <Image
-          src={logo_white}
-          alt="logo"
-          width={90}
-          height={90}
-          className="w-[90px] h-[30px] md:w-[120px] md:h-[40px]"
-        />
-      )}
+      <Link href="/">
+        {scrollPosition >= 40 ? (
+          <Image
+            src={logo}
+            alt="logo"
+            width={120}
+            height={120}
+            className="w-[90px] h-[60px] md:w-[80px] md:h-[50px]"
+          />
+        ) : (
+          <Image
+            src={logo}
+            alt="logo"
+            width={90}
+            height={90}
+            className="w-[90px] h-[30px] md:w-[80px] md:h-[50px]"
+          />
+        )}
+      </Link>
 
-      <div className="md:flex space-x-12 text-sm items-center hidden">
+      <div
+        className={`${
+          scrollPosition >= 40 ? "space-x-8" : "space-x-12"
+        } md:flex text-sm items-center hidden`}
+      >
         <NavDropdown title="Company" data={products} />
         <NavDropdown title="Products" data={products} />
         <NavDropdown data={help} title="Help Center" />
-        <NavDropdown data={help} title="Help Center" />
+        {/* <NavDropdown data={help} title="Help Center" /> */}
 
         <div className="flex justify-start items-center gap-4 flex-nowrap">
-          <button
+          <Link
+            href="/login"
             className={` ${
               scrollPosition >= 40
                 ? "bg-gray-300 hover:bg-gray-200 text-gray-600"
@@ -67,7 +75,7 @@ const PageNavbar = () => {
             } px-3 md:px-5 py-2 rounded-full text-sm`}
           >
             Sign In
-          </button>
+          </Link>
 
           <Link
             href="/register"
@@ -80,12 +88,15 @@ const PageNavbar = () => {
         </div>
       </div>
       <button
+        onClick={() => setIsMobileNvOpen(true)}
         className={`${
           scrollPosition >= 40 ? "text-primary_success" : "text-white"
         } md:hidden block`}
       >
         <RiMenu3Fill size={26} />
       </button>
+
+      <MobileNav isOpen={isMobileNvOpen} setIsOpen={setIsMobileNvOpen} />
     </nav>
   );
 };

@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <main className="bg-[#F1F1F8]">
+        <main className="bg-[#F1F1F8] overflow-hidden">
           <PageNavbar />
           {children}
           <Footer />

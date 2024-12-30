@@ -80,19 +80,19 @@ const Page: PageType = () => {
             </div>
           </div>
 
-          <div className="mt-7 flex justify-start items-start gap-3 w-full">
+          <div className="mt-7 flex justify-start items-center gap-3 w-full">
             <input type="checkbox" className="flex" />
-            <div className="font-satoshi_Variable flex gap-1 items-start justify-start">
+            <div className="font-satoshi_Variable flex items-start justify-start flex-nowrap w-full whitespace-nowrap">
               I agree to GreenLoop's{" "}
               <Link
-                className="italic text-blue-600 hover:underline"
+                className="italic text-blue-600 hover:underline px-1"
                 href="/termsAndConditions"
               >
                 terms and conditions
               </Link>{" "}
               and
               <Link
-                className="italic text-blue-600 hover:underline"
+                className="italic text-blue-600 hover:underline px-1"
                 href="/privacyPolicy"
               >
                 privacy policy

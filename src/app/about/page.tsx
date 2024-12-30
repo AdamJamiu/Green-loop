@@ -4,11 +4,12 @@ import TopPageName from "../components/TopPageName";
 import team_image from "../../images/slide4-1536x1025.jpeg";
 import Image from "next/image";
 
-// cons import
+// icons import
 import { PiRecycleDuotone } from "react-icons/pi";
 import { PiMedalMilitaryDuotone } from "react-icons/pi";
 import { PiHandshakeDuotone } from "react-icons/pi";
 import Accordion from "../components/ui/Accordion";
+import Team from "../components/Team";
 
 const Page = () => {
   return (
@@ -28,7 +29,7 @@ const Page = () => {
           <div className="w-full font-medium text-3xl sm:text-3xl text-center sm:text-left px-4 pt-10">
             <h1>Transforming Waste Into Wealth</h1>
 
-            <p className="text-sm sm:text-base md:text-lg mt-5 font-satoshi_Variable">
+            <p className="text-sm lg:text-base xl:text-lg mt-5 font-satoshi_Variable">
               Join GreenLoop Waste Services in revolutionizing waste management
               in Nigeria. Through innovative technology and sustainable
               practices, we empower individuals, businesses, and communities to
@@ -46,7 +47,7 @@ const Page = () => {
               Who we are
             </h1>
             <div className="w-full p-4 h-full">
-              <p className="text-sm xl:text-base pl-1">
+              <p className="text-sm xl:text-base pl-1 font-satoshi_Variable">
                 GreenLoop Waste Services Limited is a waste management and
                 recycling company based in Nigeria, dedicated to turning waste
                 into value. Leveraging innovative technology and sustainable
@@ -147,6 +148,9 @@ const Page = () => {
               </div>
             </div>
           </div>
+
+          {/* Team section */}
+          <Team />
 
           <div className="w-full mt-16 flex xl:flex-row flex-col justify-start items-start gap-5 md:p-0 p-4">
             <h1 className="tracking-tight text-2xl sm:text-3xl md:text-4xl lg:text-[45px] w-full xl:w-[69%] xl:text-left text-center pl-0 sm:pl-4 md:pl-16 md:sticky top-36">

@@ -15,10 +15,10 @@ const Page = () => {
     <div className="w-full h-full pb-20">
       <TopPageName title="Privacy & Terms" />
 
-      <section className="pt-20 xl:px-28 font-satoshi">
+      <section className="md:pt-20 xl:px-28 font-satoshi">
         <div className="custom-scroll">
-          <div className="w-full mt-16 flex xl:flex-row flex-col justify-start items-start gap-5 md:gap-10 md:p-0 p-4">
-            <div className="rounded-xl shadow-md w-[40%] flex flex-col md:sticky top-36">
+          <div className="w-full mt-16 flex lg:flex-row flex-col justify-start items-start gap-5 md:gap-10 md:p-0 p-4">
+            <div className="rounded-xl shadow-md w-full md:w-[40%] flex flex-col lg:sticky top-36">
               <button
                 onClick={() => setActive("terms")}
                 className={`${

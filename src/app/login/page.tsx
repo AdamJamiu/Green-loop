@@ -69,7 +69,7 @@ const Page = () => {
           <div className="flex justify-start items-center gap-2 mt-5 font-satoshi_Variable">
             <p>New to GreenLoop?</p>
             <Link
-              href="/login"
+              href="/register"
               className="italic text-blue-600 hover:underline"
             >
               Sign up here

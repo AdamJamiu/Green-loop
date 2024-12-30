@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${raleway.variable} antialiased`}>
-        <main className="bg-[#F1F1F8]">
+        <main className="bg-[#F1F1F8] overflow-hidden">
           {/* <Navbar /> */}
           {children}
           {/* <Footer /> */}

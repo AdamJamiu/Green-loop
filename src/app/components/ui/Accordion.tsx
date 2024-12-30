@@ -56,4 +56,55 @@ const Accordion = ({ content, label, ContentElement }: IAccordion) => {
   );
 };
 
+export const NavAccordion = ({
+  content,
+  label,
+  ContentElement,
+}: IAccordion) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const contentRef = useRef<HTMLDivElement | null>(null);
+  const [divHeght, setDivHeght] = useState("0px");
+
+  useEffect(() => {
+    if (isExpanded && contentRef.current) {
+      setDivHeght(`${contentRef.current.scrollHeight}px`);
+    } else {
+      setDivHeght("0px");
+    }
+  }, [isExpanded]);
+
+  return (
+    <div className="rounded-2xl px-2 md:px-4 lg:px-6 py-3 font-satoshi">
+      <button
+        className="flex justify-between items-center gap-3 text-black"
+        onClick={() => setIsExpanded((prev) => !prev)}
+      >
+        <p className="text-lg">{label}</p>
+        <div
+          className={`${
+            isExpanded ? "rotate-90 " : ""
+          } ease transition-all duration-200 text-black`}
+        >
+          <BiChevronRight className="text-[24px]" />
+        </div>
+      </button>
+
+      <div
+        ref={contentRef}
+        style={{
+          maxHeight: divHeght,
+        }}
+        className="overflow-hidden !font-satoshi_Variable ease transition-all duration-200"
+      >
+        <div className="w-full mt-4">
+          <p>{content}</p>
+          {ContentElement ? (
+            <div className="!text-black text-sm">{ContentElement}</div>
+          ) : null}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default Accordion;

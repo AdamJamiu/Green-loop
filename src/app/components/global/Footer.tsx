@@ -13,7 +13,7 @@ const Footer = () => {
     <footer className="relative font-satoshi">
       <BlobSvg color="#1A1F1A" styles="lg:block hidden" />
 
-      <div className="w-full bg-[#1A1F1A] text-white px-5 md:px-20 lg:px-24 pt-10 md:pt-0">
+      <div className="w-full bg-[#1A1F1A] text-white px-5 md:px-20 lg:px-24 pt-16 lg:pt-0">
         <div className="w-full flex flex-col justify-center items-center pb-10">
           <h2 className="md:text-5xl text-3xl">Get weekly newsltetter</h2>
           <h2 className="md:text-5xl text-3xl mt-3">
@@ -74,7 +74,7 @@ const Footer = () => {
                 About Us
               </Link>
               <Link href="/faqs" className="hover:underline">
-                FAQS
+                FAQs
               </Link>
               <Link href="/reviews" className="hover:underline">
                 Reviews

@@ -7,9 +7,11 @@ import { help, products } from "@/data/nav";
 import { useEffect, useState } from "react";
 import { RiMenu3Fill } from "react-icons/ri";
 import Link from "next/link";
+import MobileNav from "./MobileNav";
 
 const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [isMobileNvOpen, setIsMobileNvOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,14 +31,14 @@ const Navbar = () => {
     <nav
       className={`${
         scrollPosition > 40
-          ? "backdrop-blur-sm shadow-lg bg-gray-100"
+          ? "backdrop-blur-sm shadow-lg bg-gray-100 fixed top-0 right-0 left-0"
           : "bg-[#E2F6DF] md:pt-4"
-      } w-full px-4 md:px-10 lg:pl-40 lg:pr-52 md:pr-40 flex justify-between items-center font-satoshi sticky top-0 right-0 left-0 ease duration-200 transition-all z-50`}
+      } w-full px-4 lg:px-10 2xl:pl-40 2xl:pr-52 lg:pr-40 flex justify-between items-center font-satoshi ease duration-200 transition-all z-50`}
     >
       <Image
         src={logo}
         alt="logo"
-        width={120}
+        width={110}
         height={120}
         className="w-[100px] h-[60px] md:w-[120px] md:h-[90px]"
       />
@@ -45,12 +47,15 @@ const Navbar = () => {
         <NavDropdown title="Company" data={products} />
         <NavDropdown title="Products" data={products} />
         <NavDropdown data={help} title="Help Center" />
-        <NavDropdown data={help} title="Help Center" />
+        {/* <NavDropdown data={help} title="Help Center" /> */}
 
         <div className="flex justify-start items-center gap-4 flex-nowrap">
-          <button className="px-3 md:px-5 py-2 rounded-full bg-[#D7D9DA] text-[#1f2937] hover:bg-[#C7CACD] text-sm">
+          <Link
+            href="/login"
+            className="px-3 md:px-5 py-2 rounded-full bg-[#D7D9DA] text-[#1f2937] hover:bg-[#C7CACD] text-sm"
+          >
             Sign In
-          </button>
+          </Link>
 
           <Link
             href="/register"
@@ -62,9 +67,14 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      <button className="text-primary_success md:hidden block">
+      <button
+        onClick={() => setIsMobileNvOpen(true)}
+        className="text-primary_success md:hidden block"
+      >
         <RiMenu3Fill size={26} />
       </button>
+
+      <MobileNav isOpen={isMobileNvOpen} setIsOpen={setIsMobileNvOpen} />
     </nav>
   );
 };

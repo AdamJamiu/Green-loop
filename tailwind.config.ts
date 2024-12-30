@@ -27,5 +27,14 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }: any) {
+      addUtilities({
+        "::selection": {
+          backgroundColor: "#005700", // Highlight background color
+          color: "white", // Optional: Text color while highlighted
+        },
+      });
+    },
+  ],
 } satisfies Config;
