@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 
 type ITopPageProps = {
   title: string;
+  subTitle?: string;
 };
 
-const TopPageName = ({ title }: ITopPageProps) => {
+const TopPageName = ({ title, subTitle }: ITopPageProps) => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
@@ -26,12 +27,15 @@ const TopPageName = ({ title }: ITopPageProps) => {
   return (
     <div
       className={`${
-        scrollPosition > 40 ? "h-[10vh]" : "sm:h-[35vh] md:h-[30vh] h-[25vh]"
-      } z-10 bg-[#1A1F1A] flex justify-center items-end font-satoshi pb-10 md:pb-16`}
+        scrollPosition > 40 ? "h-[10vh]" : "md:h-[30vh] h-[25vh]"
+      } z-10 bg-[#1A1F1A] flex flex-col justify-end items-center font-satoshi pb-10 gap-4`}
     >
-      <h1 className="w-full text-center text-white text-xl md:text-4xl">
+      <h1 className="w-full text-center text-white text-xl md:text-4xl lg:text-5xl">
         {title}
       </h1>
+      <p className="w-full text-center text-gray-400 text-sm md:text-base">
+        {subTitle}
+      </p>
     </div>
   );
 };

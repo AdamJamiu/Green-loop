@@ -44,11 +44,11 @@ const NavDropdown = ({ title, data }: TNavDropdown) => {
         ref={dropdownRef}
         className={`${
           open ? "grid" : "hidden"
-        } w-[450px] max-w-max bg-white rounded-lg shadow-lg p-4 md:p-5 grid-cols-1 sm:grid-cols-2 gap-7 absolute top-12 -left-16`}
+        } w-[450px] max-w-max bg-white rounded-lg shadow-lg p-4 md:p-5 grid-cols-1 sm:grid-cols-2 gap-7 absolute top-12 -left-16 z-50`}
       >
         {data.map((item, index) => (
           <Link
-            href="/"
+            href={item.link}
             key={index}
             className="flex items-center space-x-2 w-full"
           >

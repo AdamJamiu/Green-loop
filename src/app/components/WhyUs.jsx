@@ -1,10 +1,10 @@
 "use client";
 
-import { wecyclersComments } from "@/data/comments";
+import { greenLoopComments } from "@/data/comments";
 import QuoteSvg from "./QuoteSvg";
 
 import WhyUsCommentCard from "./WhyUsCommentCard";
-import { Scrollbar, Navigation, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const WhysUs = () => {
@@ -51,7 +51,7 @@ const WhysUs = () => {
             // how many slides to show
             slidesPerView={3.6}
           >
-            {wecyclersComments.map((comment, index) => (
+            {greenLoopComments.map((comment, index) => (
               <SwiperSlide key={index} className="pb-1">
                 <WhyUsCommentCard comment={comment} />
               </SwiperSlide>

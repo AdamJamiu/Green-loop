@@ -1,6 +1,6 @@
 "use client";
 
-import { wecyclersComments } from "@/data/comments";
+import { greenLoopComments } from "@/data/comments";
 import React, { useState } from "react";
 import WhyUsCommentCard from "./WhyUsCommentCard";
 
@@ -31,7 +31,7 @@ const Swiper = ({ amount, children }: SwiperProps) => {
           transform: `translateX(-${currentIndex * 100}%)`,
         }}
       >
-        {wecyclersComments.map((comment, index) => (
+        {greenLoopComments.map((comment, index) => (
           <WhyUsCommentCard comment={comment} key={index} />
         ))}
       </div>

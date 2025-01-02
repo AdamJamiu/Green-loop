@@ -1,7 +1,7 @@
 "use client";
 
 import TopPageName from "../components/TopPageName";
-import team_image from "../../images/slide4-1536x1025.jpeg";
+import team_image from "../../images/slide-4.jpg";
 import Image from "next/image";
 
 // icons import

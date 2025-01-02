@@ -5,7 +5,7 @@ import BlobSvg from "./BlobSvg";
 // image imports
 import google_play from "../../../images/Google play.png";
 import apple_store from "../../../images/apple.png";
-import logo from "../../../images/pakam_logo_white.png";
+import logo from "../../../images/greenloop.png";
 import Link from "next/link";
 
 const Footer = () => {
@@ -54,7 +54,7 @@ const Footer = () => {
           </div>
 
           <ul className="text-white text-base sm:text-lg">
-            <h2 className="font-satoshi">Partner with Pakam </h2>
+            <h2 className="font-satoshi">Partner with Green Loop</h2>
 
             <div className="flex flex-col gap-2 justify-start items-start mt-2 font-satoshi_Variable text-white">
               <button className="hover:underline">Sign up as a business</button>
@@ -111,20 +111,20 @@ const Footer = () => {
                 Cookie Policy
               </Link>
               <a
-                href="mailto:support@example.com"
+                href="mailto:helpdesk@Greenloopcompany.com"
                 aria-label="Call us at +1 234 567 890"
               >
-                info@greenloop.ng
+                helpdesk@Greenloopcompany.com
               </a>
               <a href="tel:+1234567890" aria-label="Call us at +1 234 567 890">
-                +1 (234) 567-890
+                +234 9160004254
               </a>
             </div>
           </ul>
         </div>
 
         <div className="w-full text-center border-t border-t-[#cce6cc] pt-4">
-          © 2024 GreenLoop. All rights reserved.
+          © 2025 GreenLoop. All rights reserved.
         </div>
       </div>
     </footer>

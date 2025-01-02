@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import logo from "../../images/pakam_logo_white.png";
+import logo from "../../images/greenloop.png";
 import AppInput from "../components/ui/Input";
 import { FC, useState } from "react";
 import Link from "next/link";
