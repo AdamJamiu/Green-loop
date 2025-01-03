@@ -6,9 +6,9 @@ import { FaRegEyeSlash } from "react-icons/fa";
 
 export type TAppInput = {
   value: string | any;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (e: any) => void;
   label: string;
-  type:
+  type?:
     | "text"
     | "datepicker"
     | "button"
@@ -90,7 +90,7 @@ export const AppTextArea = ({
         className="bg-transparent py-2 pl-4 h-full w-full outline-none"
         value={value}
         rows={2}
-        onChange={(e: ChangeEvent<HTMLInputElement>) => onChange(e)}
+        onChange={(e: any) => onChange(e)}
       />
 
       {type === "password" ? (

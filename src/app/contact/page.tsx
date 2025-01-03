@@ -12,8 +12,10 @@ import { FaInstagram } from "react-icons/fa";
 import { BsSend } from "react-icons/bs";
 import { RiLinkedinBoxLine } from "react-icons/ri";
 import AppInput, { AppTextArea } from "../components/ui/Input";
+import { useState } from "react";
 
 const Page = () => {
+  const [fullName, setFullName] = useState("");
   return (
     <div className="w-full h-full pb-20 font-satoshi">
       <TopPageName
@@ -108,10 +110,30 @@ const Page = () => {
               <h3 className="text-lg">Let's start a conversation</h3>
 
               <form className="flex flex-col gap-6">
-                <AppInput label="Full name" type="text" className="mt-8" />
-                <AppInput label="Email address" type="email" />
-                <AppInput label="Phone number (Optional)" type="tel" />
-                <AppTextArea label="Your message" />
+                <AppInput
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  label="Full name"
+                  type="text"
+                  className="mt-8"
+                />
+                <AppInput
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  label="Email address"
+                  type="email"
+                />
+                <AppInput
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  label="Phone number (Optional)"
+                  type="tel"
+                />
+                <AppTextArea
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  label="Your message"
+                />
                 <button className="flex justify-start items-center gap-2 rounded-full bg-primary_green text-white w-max px-5 py-1.5 mt-3 hover:bg-btn_primary">
                   <p>Send</p>
                   <BsSend />
