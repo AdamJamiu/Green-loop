@@ -31,26 +31,26 @@ const PageNavbar = () => {
     <nav
       className={`${
         scrollPosition >= 40
-          ? "backdrop-blur-sm shadow-lg bg-gray-100 text-[#1f2937] py-3 md:py-8"
-          : "bg-[#1A1F1A] py-7 text-white"
-      } w-full px-4 lg:px-10 xl:pl-40 2xl:pr-52 xl:pr-40 flex justify-between items-center font-satoshi sticky top-0 right-0 left-0 ease duration-200 transition-all z-50`}
+          ? "backdrop-blur-sm shadow-lg bg-gray-100 text-[#1f2937] py-1 fixed"
+          : "bg-[#1A1F1A] py-7 text-white sticky"
+      } w-full px-4 lg:px-10 xl:pl-40 2xl:pr-52 xl:pr-40 flex justify-between items-center font-satoshi top-0 right-0 left-0 ease duration-200 transition-all z-50`}
     >
       <Link href="/">
         {scrollPosition >= 40 ? (
           <Image
             src={logo}
-            alt="logo"
-            width={120}
+            alt="green loop logo"
+            width={110}
             height={120}
-            className="w-[90px] h-[60px] md:w-[80px] md:h-[50px]"
+            className="w-[100px] h-[60px] md:w-[120px] md:h-[90px]"
           />
         ) : (
           <Image
             src={logo}
             alt="logo"
-            width={90}
-            height={90}
-            className="w-[90px] h-[30px] md:w-[80px] md:h-[50px]"
+            width={110}
+            height={120}
+            className="w-[100px] h-[60px] md:w-[120px] md:h-[90px]"
           />
         )}
       </Link>

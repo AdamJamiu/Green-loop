@@ -37,7 +37,7 @@ const Navbar = () => {
     >
       <Image
         src={logo}
-        alt="logo"
+        alt="Green loop logo"
         width={110}
         height={120}
         className="w-[100px] h-[60px] md:w-[120px] md:h-[90px]"
