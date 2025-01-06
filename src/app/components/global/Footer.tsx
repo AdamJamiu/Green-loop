@@ -5,7 +5,7 @@ import BlobSvg from "./BlobSvg";
 // image imports
 import google_play from "../../../images/Google play.png";
 import apple_store from "../../../images/apple.png";
-import logo from "../../../images/greenloop.png";
+import logo from "../../../images/logo design white.png";
 import Link from "next/link";
 
 const Footer = () => {
@@ -24,16 +24,16 @@ const Footer = () => {
           <Newsletter />
         </div>
 
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-7 lg:gap-10 mb-10 mt-16">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 md:gap-7 xl:gap-10 mb-10 mt-16">
           <div className="w-full">
             <Image
               src={logo}
               height={120}
               width={120}
-              alt="logo"
+              alt="GreenLoop logo"
               className="w-[100px] md:w-[120px]"
             />
-            <p className="text-white font-satoshi_Variable mt-8 mb-4">
+            <p className="text-white font-satoshi_Variable my-4">
               GreenLoop Waste Services Limited is dedicated to turning waste
               into value.
             </p>
@@ -57,11 +57,16 @@ const Footer = () => {
             <h2 className="font-satoshi">Partner with Green Loop</h2>
 
             <div className="flex flex-col gap-2 justify-start items-start mt-2 font-satoshi_Variable text-white">
-              <button className="hover:underline">Sign up as a business</button>
-              <button className="hover:underline">
-                Sign up as a collector
-              </button>
-              <button className="hover:underline">Partner with us</button>
+              <Link href="/" className="hover:underline">
+                Become a Green Partner
+              </Link>
+              <Link href="/" className="hover:underline">
+                Become a Green Agent
+              </Link>
+              <Link href="/" className="hover:underline">
+                Sign up as Individual
+              </Link>
+              {/* <button className="hover:underline">Partner with us</button> */}
             </div>
           </ul>
 
@@ -107,18 +112,21 @@ const Footer = () => {
             <h2 className="font-satoshi">Contact Us</h2>
 
             <div className="flex flex-col gap-2 justify-start items-start mt-2 font-satoshi_Variable text-white">
-              <Link href="/cookiePolicy" className="hover:underline">
+              {/* <Link href="/cookiePolicy" className="hover:underline">
                 Cookie Policy
-              </Link>
-              <a
+              </Link> */}
+              <Link
                 href="mailto:helpdesk@Greenloopcompany.com"
                 aria-label="Call us at +1 234 567 890"
               >
-                helpdesk@Greenloopcompany.com
-              </a>
-              <a href="tel:+1234567890" aria-label="Call us at +1 234 567 890">
+                helpdesk@greenloopcompany.com
+              </Link>
+              <Link
+                href="tel:+1234567890"
+                aria-label="Call us at +1 234 567 890"
+              >
                 +234 9160004254
-              </a>
+              </Link>
             </div>
           </ul>
         </div>

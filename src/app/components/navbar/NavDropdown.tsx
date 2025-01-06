@@ -26,14 +26,16 @@ const NavDropdown = ({ title, data }: TNavDropdown) => {
   }, []);
 
   return (
-    <div className="relative font-satoshi">
+    <div
+      onMouseLeave={() => setOpen(false)}
+      className="relative font-satoshi group"
+    >
       <button
+        onMouseOver={() => setOpen(true)}
         className={`${
-          open
-            ? "text-primary_success border-b-gray-800"
-            : "text-inherit border-transparent"
-        } border-b pb-2 flex items-center gap-2 text-sm hover:text-gray-600 ease transition-all`}
-        onClick={() => setOpen(true)}
+          open ? "border-b-gray-800" : " border-transparent"
+        } flex items-center gap-2 text-sm hover:text-slate-300 ease transition-all`}
+        onMouseEnter={() => setOpen(true)}
       >
         {title}
         <BiChevronDown />
@@ -43,29 +45,33 @@ const NavDropdown = ({ title, data }: TNavDropdown) => {
       <div
         ref={dropdownRef}
         className={`${
-          open ? "grid" : "hidden"
-        } w-[450px] max-w-max bg-white rounded-lg shadow-lg p-4 md:p-5 grid-cols-1 sm:grid-cols-2 gap-7 absolute top-12 -left-16 z-50`}
+          open ? "z-[100]" : "-z-[100] opacity-0 translate-y-10"
+        } w-[450px] min-w-max absolute top-5 -left-16 z-[90] ease transition-all duration-300 pt-8`}
       >
-        {data.map((item, index) => (
-          <Link
-            href={item.link}
-            key={index}
-            className="flex items-center space-x-2 w-full"
-          >
-            <div
-              className={`${
-                index === 0
-                  ? "bg-success_opacity text-primary_success"
-                  : index === 1
-                  ? "bg-yellow_opacity text-primary_yellow"
-                  : ""
-              } rounded-full p-2 text-xl md:text-2xl`}
+        <div className="grid text-black bg-white rounded-xl shadow-lg py-7   px-6 grid-cols-1 sm:grid-cols-2 gap-2">
+          {data.map((item, index) => (
+            <Link
+              href={item.link}
+              key={index}
+              className="flex items-center space-x-3 w-full hover:bg-gray-100 p-5 rounded-xl"
             >
-              {item.icon}
-            </div>
-            <p className="text-sm w-full">{item.label}</p>
-          </Link>
-        ))}
+              <div
+                className={`${
+                  index === 0
+                    ? "bg-primary_success"
+                    : index === 1
+                    ? "bg-primary_yellow"
+                    : index === 2
+                    ? "bg-red-500"
+                    : "bg-blue-500"
+                } rounded-full p-2 text-xl md:text-2xl text-white`}
+              >
+                {item.icon}
+              </div>
+              <p className="text-sm w-full">{item.label}</p>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -28,7 +28,8 @@ const WhoWeserve = () => {
 
       <div className="w-screen mt-20">
         <Swiper
-          //   autoplay={Autoplay}
+          autoplay={true}
+          modules={[Autoplay]}
           speed={3000}
           navigation={false}
           scrollbar={false}

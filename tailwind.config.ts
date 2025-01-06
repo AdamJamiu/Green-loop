@@ -21,9 +21,12 @@ export default {
       fontFamily: {
         poppins: "var(--font-poppins)",
         tahooma: "Tahooma",
-        raleway: "var(--font-raleway)",
+        inter: "var(--font-inter)",
         satoshi: "Satoshi-Medium",
         satoshi_Variable: "Satoshi-Light",
+      },
+      backgroundImage: {
+        hero: "url('/8.jpg')",
       },
     },
   },

@@ -3,11 +3,11 @@ import Footer from "../components/global/Footer";
 import PageNavbar from "../components/global/PageNavbar";
 
 export const metadata: Metadata = {
-  title: "Contact | Recycling website",
+  title: "About | Green Loop",
   description:
     "GreenLoop Waste Services Limited is dedicated to turning waste into value.",
   keywords:
-    "terms and conditions green loop, terms and conditions greenloop, conditions green loop, terms green loop, terms green loop nigeria",
+    "Green loop, green loop africa, green loop nigeria, about green loop",
 };
 
 export default function RootLayout({
@@ -16,8 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="bg-[#F1F1F8] overflow-hidden">
-      <PageNavbar />
+    <main className="bg-[#F1F1F8]">
+      <div className="text-black">
+        <PageNavbar />
+      </div>
       {children}
       <Footer />
     </main>

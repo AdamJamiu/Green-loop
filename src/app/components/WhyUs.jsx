@@ -25,7 +25,8 @@ const WhysUs = () => {
 
         <div className="w-screen">
           <Swiper
-            autoplay={Autoplay}
+            autoplay={true}
+            modules={[Autoplay]}
             speed={3000}
             navigation={false}
             scrollbar={false}

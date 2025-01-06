@@ -6,6 +6,7 @@ import { IoWalletOutline } from "react-icons/io5";
 import { TbBrandPaypal } from "react-icons/tb";
 import { LuScanQrCode } from "react-icons/lu";
 import { GrContact } from "react-icons/gr";
+import { RiTeamLine } from "react-icons/ri";
 
 export const products: TNavItem[] = [
   {
@@ -13,15 +14,33 @@ export const products: TNavItem[] = [
     label: "Earn as You Waste",
     link: "/",
   },
-  {
-    icon: TbBrandPaypal({}),
-    label: "Pay as You Waste",
-    link: "/",
-  },
+  // {
+  //   icon: TbBrandPaypal({}),
+  //   label: "Pay as You Waste",
+  //   link: "/",
+  // },
   {
     icon: LuScanQrCode({}),
     label: "Smart Waste Management",
     link: "/",
+  },
+];
+
+export const company: TNavItem[] = [
+  {
+    icon: IoWalletOutline({}),
+    label: "About Us",
+    link: "/about",
+  },
+  {
+    icon: TbBrandPaypal({}),
+    label: "Mission",
+    link: "/about#vision",
+  },
+  {
+    icon: RiTeamLine({}),
+    label: "Vision",
+    link: "/about#mission",
   },
 ];
 

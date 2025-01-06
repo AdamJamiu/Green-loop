@@ -174,3 +174,21 @@
 .custom-scroll::-webkit-scrollbar-thumb:hover {
   background: transparent;
 }
+
+@keyframes wide {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2) translateY(20px);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.animate-wide {
+  animation: wide 15s ease infinite alternate;
+}

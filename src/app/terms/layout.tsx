@@ -16,14 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`antialiased`}>
-        <main className="bg-[#F1F1F8] overflow-hidden">
-          <PageNavbar />
-          {children}
-          <Footer />
-        </main>
-      </body>
-    </html>
+    <main className="bg-[#F1F1F8] overflow-hidden">
+      <PageNavbar />
+      {children}
+      <Footer />
+    </main>
   );
 }

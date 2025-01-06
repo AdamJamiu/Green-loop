@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Raleway } from "next/font/google";
+import { Inter, Poppins, Raleway } from "next/font/google";
 import "./globals.css";
 // import Navbar from "./components/global/Navbar";
 // import Footer from "./components/global/Footer";
@@ -18,15 +18,15 @@ const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-const raleway = Raleway({
-  variable: "--font-raleway",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
-  title: "Green Loop | Recycling website",
+  title: "Green Loop",
   description:
     "GreenLoop Waste Services Limited is dedicated to turning waste into value.",
   keywords: "Green loop, Green loop nigeria, GreenLoop",
@@ -39,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${raleway.variable} antialiased`}>
+      <body className={`${poppins.variable} ${inter.variable} antialiased`}>
         <main className="bg-[#F1F1F8] overflow-hidden">
           {/* <Navbar /> */}
           {children}
