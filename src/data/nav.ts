@@ -35,12 +35,12 @@ export const company: TNavItem[] = [
   {
     icon: TbBrandPaypal({}),
     label: "Mission",
-    link: "/about#vision",
+    link: "/about#mission",
   },
   {
     icon: RiTeamLine({}),
     label: "Vision",
-    link: "/about#mission",
+    link: "/about#vision",
   },
 ];
 

@@ -45,12 +45,13 @@ const NavDropdown = ({ title, data }: TNavDropdown) => {
       <div
         ref={dropdownRef}
         className={`${
-          open ? "z-[100]" : "-z-[100] opacity-0 translate-y-10"
+          open ? "z-[100]" : "-z-[100] opacity-0 translate-y-10 invisible"
         } w-[450px] min-w-max absolute top-5 -left-16 z-[90] ease transition-all duration-300 pt-8`}
       >
         <div className="grid text-black bg-white rounded-xl shadow-lg py-7   px-6 grid-cols-1 sm:grid-cols-2 gap-2">
           {data.map((item, index) => (
             <Link
+              onClick={() => setOpen(false)}
               href={item.link}
               key={index}
               className="flex items-center space-x-3 w-full hover:bg-gray-100 p-5 rounded-xl"

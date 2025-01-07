@@ -39,7 +39,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${inter.variable} antialiased`}>
+      <body
+        className={`${poppins.variable} ${inter.variable} antialiased scroll-smooth`}
+      >
         <main className="bg-[#F1F1F8] overflow-hidden">
           {/* <Navbar /> */}
           {children}

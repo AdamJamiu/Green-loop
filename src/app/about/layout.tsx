@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="bg-[#F1F1F8]">
+    <main className="bg-[#F1F1F8] scroll-smooth">
       <PageNavbar />
       {children}
       <Footer />

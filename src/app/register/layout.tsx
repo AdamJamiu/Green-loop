@@ -13,5 +13,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <main className="bg-[#F1F1F8]">{children}</main>;
+  return <main className="bg-[#F1F1F8] scroll-smooth">{children}</main>;
 }

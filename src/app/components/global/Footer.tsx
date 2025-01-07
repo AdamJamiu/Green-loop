@@ -5,7 +5,7 @@ import BlobSvg from "./BlobSvg";
 // image imports
 import google_play from "../../../images/Google play.png";
 import apple_store from "../../../images/apple.png";
-import logo from "../../../images/logo design white.png";
+import logo from "../../../images/logo white.png";
 import Link from "next/link";
 
 const Footer = () => {
@@ -15,7 +15,7 @@ const Footer = () => {
 
       <div className="w-full bg-[#1A1F1A] text-white px-5 md:px-20 lg:px-24 pt-16 lg:pt-0">
         <div className="w-full flex flex-col justify-center items-center pb-10">
-          <h2 className="md:text-5xl text-3xl">Get weekly newsltetter</h2>
+          <h2 className="md:text-5xl text-3xl">Get weekly newsletter</h2>
           <h2 className="md:text-5xl text-3xl mt-3">
             directly into your inbox
           </h2>
@@ -78,7 +78,7 @@ const Footer = () => {
               <Link href="/about" className="hover:underline">
                 About Us
               </Link>
-              <Link href="/faqs" className="hover:underline">
+              <Link href="/about#faqs" className="hover:underline">
                 FAQs
               </Link>
               <Link href="/reviews" className="hover:underline">

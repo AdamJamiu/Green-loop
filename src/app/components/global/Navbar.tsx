@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import logo from "../../../images/greenloop.png";
-import logo_white from "../../../images/logo design white.png";
+import logo_white from "../../../images/logo white.png";
 import NavDropdown from "../navbar/NavDropdown";
 import { company, help, products } from "@/data/nav";
 import { useEffect, useState } from "react";

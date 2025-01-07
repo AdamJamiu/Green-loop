@@ -8,7 +8,7 @@ import Image from "next/image";
 import { PiRecycleDuotone } from "react-icons/pi";
 import { PiMedalMilitaryDuotone } from "react-icons/pi";
 import { PiHandshakeDuotone } from "react-icons/pi";
-import Accordion from "../components/ui/Accordion";
+// import Accordion from "../components/ui/Accordion";
 import Team from "../components/Team";
 import StickyFaq from "../components/StickyFaq";
 
@@ -42,8 +42,11 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="custom-scroll">
-          <div className="w-full mt-16 flex xl:flex-row flex-col justify-start items-start gap-5">
+        <div id="mission" className="custom-scroll">
+          <div
+            id="vision"
+            className="w-full mt-16 flex xl:flex-row flex-col justify-start items-start gap-5"
+          >
             <h1 className="tracking-tight text-2xl sm:text-3xl md:text-4xl lg:text-[45px] w-full xl:w-[69%] xl:text-left text-center pl-0 sm:pl-4 md:pl-16 md:sticky top-36">
               Who we are
             </h1>
@@ -68,7 +71,10 @@ const Page = () => {
                     pollution, and driving a circular economy.
                   </p>
                 </div>
-                <div className="p-7 md:p-10 bg-white rounded-2xl border-gray-200 border">
+                <div
+                  id="mission"
+                  className="p-7 md:p-10 bg-white rounded-2xl border-gray-200 border"
+                >
                   <p className="">
                     <b>Mission:</b> To build a scalable, tech-driven waste
                     management system that rewards users, promotes recycling,
@@ -153,7 +159,10 @@ const Page = () => {
           {/* Team section */}
           <Team />
 
-          <div className="w-full mt-16 flex xl:flex-row flex-col justify-start items-start gap-5 md:p-0 p-4">
+          <div
+            id="faqs"
+            className="w-full mt-16 flex xl:flex-row flex-col justify-start items-start gap-5 md:p-0 p-4"
+          >
             <h1 className="tracking-tight text-2xl sm:text-3xl md:text-4xl lg:text-[45px] w-full xl:w-[69%] xl:text-left text-center pl-0 sm:pl-4 md:pl-16 md:sticky top-36">
               Frequently asked questions
             </h1>
