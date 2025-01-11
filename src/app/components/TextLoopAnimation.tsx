@@ -2,22 +2,29 @@
 
 import React, { useState, useEffect } from "react";
 
-const TextLoopAnimation = () => {
-  const TEXTS: string[] = ["Plastics", "Papers", "Cartons", "Metals", "Cans"];
+export interface TextLoopProps {
+  data: string[];
+  color?: string;
+}
+
+const TextLoopAnimation = ({ data, color }: TextLoopProps) => {
   const [currentTextIndex, setCurrentTextIndex] = useState<number>(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % TEXTS.length);
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % data.length);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [TEXTS.length]);
+  }, [data.length]);
 
   return (
     // <div className="text-loop-container">
-    <div key={currentTextIndex} className="text-slide-in p-0 m-0">
-      {TEXTS[currentTextIndex]}
+    <div
+      key={currentTextIndex}
+      className={`${color} text-slide-in p-0 m-0 w-max`}
+    >
+      {data[currentTextIndex]}
     </div>
     // </div>
   );

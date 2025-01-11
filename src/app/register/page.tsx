@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import logo from "../../images/greenloop.png";
+import logo from "../../images/logo white.png";
 import AppInput from "../components/ui/Input";
 import { FC, useState } from "react";
 import Link from "next/link";
@@ -22,7 +22,7 @@ const Page: PageType = () => {
       <div className="col-span-4 md:block hidden">
         <div className="bg-[#11161b] text-white px-8 py-12 md:p-16 overflow-hidden pattern-1 h-full flex flex-col">
           <Link href={"/"}>
-            <Image src={logo} alt="logo" height={125} width={125} />
+            <Image src={logo} alt="logo" height={145} width={145} />
           </Link>
 
           <h2 className="mt-16 text-[#cbd5e1] text-xl sm:text-2xl sm:w-[69%]">

@@ -6,11 +6,20 @@ import { GiConfirmed } from "react-icons/gi";
 import { BsCardChecklist } from "react-icons/bs";
 import { TfiWallet } from "react-icons/tfi";
 import CurveSvg from "./CurveSvg";
+import { motion } from "framer-motion";
 
 const HowItWorks = () => {
   return (
     <section className="py-28 xl:pb-96 bg-primary_green font-satoshi w-full relative overflow-hidden z-20">
-      <div className="w-full flex flex-col justify-center items-center">
+      <motion.div
+        initial={{ y: 30, opacity: 0 }} // Initial state: Slightly below and invisible
+        animate={{ y: 0, opacity: 1 }} // Final state: At its original position and visible
+        transition={{
+          duration: 0.6, // Animation duration
+          ease: "easeOut", // Smooth easing
+        }}
+        className="w-full flex flex-col justify-center items-center"
+      >
         <h2 className="font-semibold text-2xl md:text-5xl text-white">
           How it works
         </h2>
@@ -40,7 +49,7 @@ const HowItWorks = () => {
             description="Click on your preferred recycling option, fill in the required details, and submit your request"
           />
         </div>
-      </div>
+      </motion.div>
 
       <CurveSvg
         className="xl:block hidden absolute bottom-[-2rem] w-full text-gray-100 fill-gray-100"

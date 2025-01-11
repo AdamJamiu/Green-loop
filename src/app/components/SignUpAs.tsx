@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 
 const SignUpAs = () => {
   return (
-    <div className="w-full font-inter my-16">
+    <div id="sign-up-as" className="w-full font-inter my-16">
       <h1 className="w-full text-center font-semibold text-3xl md:text-4xl lg:text-5xl">
         Sign up as ...
       </h1>

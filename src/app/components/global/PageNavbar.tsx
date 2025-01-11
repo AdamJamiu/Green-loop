@@ -10,7 +10,12 @@ import { RiMenu3Fill } from "react-icons/ri";
 import Link from "next/link";
 import MobileNav from "./MobileNav";
 
-const PageNavbar = () => {
+interface PageNavProps {
+  className?: string;
+  dynamicLogo?: boolean;
+}
+
+const PageNavbar = ({ className, dynamicLogo }: PageNavProps) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isMobileNvOpen, setIsMobileNvOpen] = useState(false);
 
@@ -34,11 +39,11 @@ const PageNavbar = () => {
         scrollPosition > 40
           ? "backdrop-blur-lg shadow-lg bg-slate-100 top-0 right-0 left-0"
           : "md:pt-4"
-      } w-full px-4 lg:px-10 2xl:pl-40 2xl:pr-52 lg:pr-40 fixed flex justify-between items-center font-satoshi ease duration-200 transition-all z-50`}
+      } ${className} w-full px-4 lg:px-10 2xl:pl-40 2xl:pr-52 lg:pr-40 fixed flex justify-between items-center font-satoshi ease duration-200 transition-all z-50`}
     >
       <Link href="/">
         <Image
-          src={scrollPosition >= 40 ? logo : logo_white}
+          src={scrollPosition <= 40 && dynamicLogo ? logo_white : logo}
           alt="Green loop logo"
           width={110}
           height={120}

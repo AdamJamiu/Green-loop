@@ -1,12 +1,12 @@
 import TextLoopAnimation from "./components/TextLoopAnimation";
-import Image from "next/image";
+// import Image from "next/image";
 
 // image imports
-import world_map from "../images/8.jpg";
-import play_store from "../images/get-it-on-google-play-badge.png";
-import app_store from "../images/app store badge.png";
-import user1 from "../images/User1.png";
-import user2 from "../images/User2.png";
+// import world_map from "../images/8.jpg";
+// import play_store from "../images/get-it-on-google-play-badge.png";
+// import app_store from "../images/app store badge.png";
+// import user1 from "../images/User1.png";
+// import user2 from "../images/User2.png";
 import WhysUs from "./components/WhyUs";
 import WeAreMembersOf from "./components/WeAreMembersOf";
 import HowItWorks from "./components/HowItWorks";
@@ -17,6 +17,8 @@ import Link from "next/link";
 import { BiChevronRight } from "react-icons/bi";
 
 export default function Home() {
+  const TEXTS: string[] = ["Plastics", "Papers", "Cartons", "Metals", "Cans"];
+
   return (
     <div>
       <Navbar />
@@ -45,7 +47,7 @@ export default function Home() {
                 Turn your waste
               </h1>
               <div className="font-extrabold  text-primary_green text-[40px]  sm:text-6xl lg:text-7xl flex sm:justify-center justify-start items-center gap-3 sm:text-center flex-wrap">
-                <TextLoopAnimation />{" "}
+                <TextLoopAnimation data={TEXTS} />{" "}
                 <span className="text-slate-100">into value</span>
               </div>
               <h1 className="font-extrabold text-[40px] sm:text-6xl lg:text-7xl text-slate-100">

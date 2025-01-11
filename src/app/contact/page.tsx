@@ -13,6 +13,7 @@ import { BsSend } from "react-icons/bs";
 import { RiLinkedinBoxLine } from "react-icons/ri";
 import AppInput, { AppTextArea } from "../components/ui/Input";
 import { useState } from "react";
+import StickyFaq from "../components/StickyFaq";
 
 const Page = () => {
   const [fullName, setFullName] = useState("");
@@ -80,24 +81,28 @@ const Page = () => {
 
               <div className="mt-10 flex justify-start items-center gap-4">
                 <Link
-                  href=""
+                  target="_blank"
+                  href="https://www.instagram.com/greenloopng?igsh=MWgwOWZudDV0YzNrMw=="
                   className="px-4 py-3 rounded-3xl border border-gray-300 hover:bg-gray-200"
                 >
                   <FaInstagram size={28} />
                 </Link>
                 <Link
+                  target="_blank"
                   href=""
                   className="px-4 py-3 rounded-3xl border border-gray-300 hover:bg-gray-200"
                 >
                   <BsTwitterX size={24} />
                 </Link>
                 <Link
-                  href=""
+                  target="_blank"
+                  href="https://www.facebook.com/profile.php?id=61571488022128&mibextid=ZbWKwL"
                   className="px-4 py-3 rounded-3xl border border-gray-300 hover:bg-gray-200"
                 >
                   <LuFacebook size={25} />
                 </Link>
                 <Link
+                  target="_blank"
                   href=""
                   className="px-4 py-3 rounded-3xl border border-gray-300 hover:bg-gray-200"
                 >
@@ -140,6 +145,11 @@ const Page = () => {
                 </button>
               </form>
             </div>
+          </div>
+
+          {/* FAQ */}
+          <div className="mt-20">
+            <StickyFaq />
           </div>
         </section>
       </div>

@@ -1,8 +1,14 @@
-const BlobSvg = ({ color, styles }: { color: string; styles?: string }) => {
+const BlobSvg = ({
+  color,
+  className,
+}: {
+  color: string;
+  className?: string;
+}) => {
   return (
     <svg
       fill={color || "#5EB237"}
-      className={styles}
+      className={`${className}`}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1000 265.34"
     >
