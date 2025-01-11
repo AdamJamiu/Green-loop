@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "GreenLoop Waste Services Limited is dedicated to turning waste into value.",
   keywords:
-    "terms and conditions green loop, terms and conditions greenloop, conditions green loop, terms green loop, terms green loop nigeria",
+    "terms and conditions greenloop, terms and conditions greenloop, conditions greenloop, terms greenloop, terms greenloop nigeria",
 };
 
 export default function RootLayout({

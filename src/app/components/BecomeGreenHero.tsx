@@ -19,8 +19,8 @@ const BecomeGreenHero = () => {
   ];
 
   return (
-    <section className="w-full pb-48 lg:pb-96 bg-[#F8FFF4] font-inter pt-10 px-4 sm:px-10 md:px-28 lg:px-40 relative min-h-screen scroll-smooth">
-      <div className="flex justify-between items-center gap-10 md:gap-2 lg:gap-0">
+    <section className="w-full pb-48 bg-[#F8FFF4] font-inter pt-10 px-4 sm:px-10 md:px-28 lg:px-40 relative min-h-screen scroll-smooth">
+      <div className="flex justify-between items-center gap-10 md:gap-2 lg:gap-0 lg:flex-nowrap flex-wrap">
         <motion.div
           initial={{ y: 30, opacity: 0 }} // Initial state: Slightly below and invisible
           animate={{ y: 0, opacity: 1 }} // Final state: At its original position and visible
@@ -30,7 +30,7 @@ const BecomeGreenHero = () => {
           }}
           className="w-full space-y-10"
         >
-          <div className="font-semibold text-2xl md:text-3xl lg:text-4xl xl:text-5xl space-y-4">
+          <div className="font-semibold text-3xl md:text-4xl xl:text-5xl md:space-y-4 space-y-2">
             <h1>
               <TypewriterTextLoop data={TEXTS} />
             </h1>
@@ -68,10 +68,7 @@ const BecomeGreenHero = () => {
         </motion.div>
       </div>
 
-      <BlobSvg
-        className="absolute left-0 right-0 -bottom-10 lg:block hidden"
-        color="#F1F1F8"
-      />
+      {/* <BlobSvg className="absolute left-0 right-0 -bottom-10 lg:block hidden fill-gray-50"  /> */}
     </section>
   );
 };

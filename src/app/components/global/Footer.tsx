@@ -54,7 +54,7 @@ const Footer = () => {
           </div>
 
           <ul className="text-white text-base sm:text-lg">
-            <h2 className="font-satoshi">Partner with Green Loop</h2>
+            <h2 className="font-satoshi">Partner with GreenLoop</h2>
 
             <div className="flex flex-col gap-2 justify-start items-start mt-2 font-satoshi_Variable text-white">
               <Link href="/" className="hover:underline">
@@ -64,7 +64,7 @@ const Footer = () => {
                 Become a Green Agent
               </Link>
               <Link href="/" className="hover:underline">
-                Sign up as Individual
+                Become a Green Individual
               </Link>
               {/* <button className="hover:underline">Partner with us</button> */}
             </div>
@@ -131,7 +131,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="w-full text-center border-t border-t-[#cce6cc] pt-4">
+        <div className="w-full text-center border-t border-t-[#cce6cc] py-6">
           © 2025 GreenLoop. All rights reserved.
         </div>
       </div>

@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 
 const SignUpAs = () => {
   return (
-    <div id="sign-up-as" className="w-full font-inter my-16">
+    <div id="sign-up-as" className="w-full font-satoshi my-16">
       <h1 className="w-full text-center font-semibold text-3xl md:text-4xl lg:text-5xl">
         Sign up as ...
       </h1>
@@ -20,21 +20,21 @@ const SignUpAs = () => {
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-16 sm:mt-28">
         <SignUpAsCard
           description="Individuals who are interested in collecting recyclable materials from homes and businesses."
-          title="An Individual"
+          title="A Green Individual"
           link="/signup-individual"
           img={picker}
         />
 
         <SignUpAsCard
           description="Coordinate and manage community recycling efforts."
-          title="An Agent"
+          title="A Green Agent"
           link="/signup-agent"
           img={agent_image}
           delay={1}
         />
         <SignUpAsCard
           description="Collaborate to promote and support recycling initiatives."
-          title="A Partner"
+          title="A Green Partner"
           link="/signup-partner"
           img={partner}
           delay={2}
@@ -60,7 +60,7 @@ const SignUpAsCard = ({
         ease: "easeOut", // Smooth easing
         delay,
       }}
-      className="w-full flex flex-col justify-center items-center md:justify-start md:items-start font-inter space-y-5"
+      className="w-full flex flex-col justify-center items-center md:justify-start md:items-start font-satoshi space-y-5"
     >
       <Image
         src={img}

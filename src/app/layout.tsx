@@ -26,10 +26,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Green Loop",
+  title: "GreenLoop",
   description:
     "GreenLoop Waste Services Limited is dedicated to turning waste into value.",
-  keywords: "Green loop, Green loop nigeria, GreenLoop",
+  keywords: "Green loop, Greenloop nigeria, GreenLoop",
 };
 
 export default function RootLayout({
@@ -42,7 +42,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${inter.variable} antialiased scroll-smooth`}
       >
-        <main className="bg-[#F1F1F8] overflow-hidden">
+        <main className="bg-gray-50 overflow-hidden">
           {/* <Navbar /> */}
           {children}
           {/* <Footer /> */}

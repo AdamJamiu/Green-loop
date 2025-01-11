@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const WhysUs = () => {
   return (
-    <section className="w-full py-28 bg-[#F1F1F8] font-satoshi">
+    <section className="w-full py-28 font-satoshi">
       <div className="flex justify-center items-center flex-col -space-y-44 sm:-space-y-28">
         <div className="w-full max-w-5xl flex justify-center items-center">
           <div className="w-full bg-white rounded-lg shadow-lg px-10 py-7 relative h-96">

@@ -3,11 +3,10 @@ import Footer from "../components/global/Footer";
 import PageNavbar from "../components/global/PageNavbar";
 
 export const metadata: Metadata = {
-  title: "About | Green Loop",
+  title: "About | GreenLoop",
   description:
     "GreenLoop Waste Services Limited is dedicated to turning waste into value.",
-  keywords:
-    "Green loop, green loop africa, green loop nigeria, about green loop",
+  keywords: "Green loop, greenloop africa, greenloop nigeria, about greenloop",
 };
 
 export default function RootLayout({

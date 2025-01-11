@@ -45,14 +45,14 @@ const HowItWorks = () => {
           />
           <HowItWorkCard
             Icon={TfiWallet}
-            title="Submit Request"
+            title="Pickup schedule"
             description="Click on your preferred recycling option, fill in the required details, and submit your request"
           />
         </div>
       </motion.div>
 
       <CurveSvg
-        className="xl:block hidden absolute bottom-[-2rem] w-full text-gray-100 fill-gray-100"
+        className="xl:block hidden absolute bottom-[-2rem] w-full text-gray-100 fill-gray-50"
         fill=""
       />
     </section>

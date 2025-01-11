@@ -33,8 +33,8 @@ const NavDropdown = ({ title, data }: TNavDropdown) => {
       <button
         onMouseOver={() => setOpen(true)}
         className={`${
-          open ? "border-b-gray-800" : " border-transparent"
-        } flex items-center gap-2 text-sm hover:text-slate-300 ease transition-all`}
+          open ? "border-b-gray-800" : "border-transparent"
+        } flex items-center gap-2 text-sm hover:text-slate-600 ease transition-all`}
         onMouseEnter={() => setOpen(true)}
       >
         {title}

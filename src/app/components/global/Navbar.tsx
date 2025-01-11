@@ -32,14 +32,14 @@ const Navbar = () => {
     <nav
       className={`${
         scrollPosition > 40
-          ? "backdrop-blur-lg shadow-lg bg-slate-100 top-0 right-0 left-0"
+          ? "backdrop-blur-xl bg- top-0 right-0 left-0"
           : "pt-4"
       } w-full px-4 lg:px-10 2xl:pl-40 2xl:pr-52 lg:pr-40 fixed flex justify-between items-center font-satoshi ease duration-200 transition-all z-[110]`}
     >
       <Link href="/">
         <Image
-          src={scrollPosition >= 40 ? logo : logo_white}
-          alt="Green loop logo"
+          src={logo}
+          alt="Greenloop logo"
           width={110}
           height={120}
           className="w-[90px] h-[60px] md:w-[120px] md:h-[90px]"
@@ -47,7 +47,7 @@ const Navbar = () => {
       </Link>
 
       <div
-        className={`${scrollPosition >= 40 ? "" : "text-slate-100"}
+        className={`${scrollPosition >= 40 ? "" : "text-inherit"}
         md:flex space-x-12 text-sm items-center hidden`}
       >
         <NavDropdown title="Company" data={company} />

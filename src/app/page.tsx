@@ -23,7 +23,7 @@ export default function Home() {
     <div>
       <Navbar />
       <div className="overflow-hidden">
-        <div className="w-full flex flex-col items-center justify-center to-[#11100f] relative overflow-hidden bg-[#001402] bg-gradient-to-br from-[#11100f] pb-32 sm:pt-40 pt-20 md:pb-32 md:text-center min-h-screen h-full">
+        <div className="w-full flex flex-col items-center justify-center to-[#11100f relative overflow-hidden bg-[#001402 bg-[#F8FFF4] bg-gradient-to-b from-[#11100f pb-32 sm:pt-40 pt-20 md:pb-32 md:text-center min-h-screen h-full">
           {/* <div className="bg-white rounded-lg shadow-md absolute left-[6%] sm:top-[10%] top-[2%] z-10 p-2 text-[#1d1d1d] text-xs w-72 float">
             <Image src={user1} alt="user1" width={30} height={30} />
             <p className="font-medium my-1.5">
@@ -31,7 +31,7 @@ export default function Home() {
             </p>
             <p className="font-satoshi_Variable">20 MINS ago</p>
           </div> */}
-          <div className="absolute inset-0 min-h-screen animate-wide bg-hero bg-cover bg-right opacity-5"></div>
+          <div className="absolute inset-0 min-h-screen animate-wide bg-hero bg opacity-"></div>
 
           <section className="h-full max-w-6xl w-full px-4 sm:px-0 sm:py-16 flex flex-col items-center isolate z-[90]">
             {/* <Image
@@ -43,20 +43,20 @@ export default function Home() {
             /> */}
 
             <div className="w-full text-left sm:text-center sm:space-y-3 font-satoshi">
-              <h1 className="font-extrabold text-[40px] sm:text-6xl lg:text-7xl text-slate-100">
+              <h1 className="font-extrabold text-[40px] sm:text-6xl lg:text-7xl text-black">
                 Turn your waste
               </h1>
               <div className="font-extrabold  text-primary_green text-[40px]  sm:text-6xl lg:text-7xl flex sm:justify-center justify-start items-center gap-3 sm:text-center flex-wrap">
                 <TextLoopAnimation data={TEXTS} />{" "}
-                <span className="text-slate-100">into value</span>
+                <span className="text-black">into value</span>
               </div>
-              <h1 className="font-extrabold text-[40px] sm:text-6xl lg:text-7xl text-slate-100">
+              <h1 className="font-extrabold text-[40px] sm:text-6xl lg:text-7xl text-black">
                 With GreenLoop
               </h1>
             </div>
 
             <div className="w-full text-left sm:text-center mt-10 max-w-lg space-y-14">
-              <p className="text-left sm:text-center text-slate-300">
+              <p className="text-left sm:text-center text-slate-900">
                 We aim to help individuals, businesses, and communities monetize
                 waste materials like plastics, e-waste, and metals.
               </p>
@@ -64,7 +64,7 @@ export default function Home() {
               <div>
                 <Link
                   href="/become-partner"
-                  className="px-4 md:px-7 py-3 rounded-full bg-slate-100 hover:opacity-75 ease transition-all flex justify-center items-center gap-1 w-max self-center sm:mx-auto"
+                  className="px-4 md:px-7 py-3 rounded-full text-white bg-primary_green hover:opacity-75 ease transition-all flex justify-center items-center gap-1 w-max self-center sm:mx-auto"
                 >
                   <p className="text-base">Become a partner</p>
                   <BiChevronRight size={22} />

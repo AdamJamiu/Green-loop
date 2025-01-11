@@ -26,7 +26,8 @@ export default {
         satoshi_Variable: "Satoshi-Light",
       },
       backgroundImage: {
-        hero: "url('/8.jpg')",
+        hero: "url('/World-Map-1.png')",
+        // hero: "url('/8.jpg')",
       },
     },
   },

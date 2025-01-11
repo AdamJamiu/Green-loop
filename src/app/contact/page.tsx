@@ -44,7 +44,7 @@ const Page = () => {
 
           <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 mt-28">
             <div className="w-full">
-              <h1 className="text-lg md:text-xl ">Visit Green Loop</h1>
+              <h1 className="text-lg md:text-xl ">Visit GreenLoop</h1>
               <p className="mt-6 text-gray-700">
                 Our office is Augusto Estate, Agege Lagos, Lagos. We are open
                 Monday through Friday from 9:00am to 5:00pm
@@ -73,7 +73,11 @@ const Page = () => {
                 />
                 <div className="text-sm">
                   <p className="text-gray-800">Whatsapp</p>
-                  <Link className="mt-1" href="https://wa.me/+2349160004254">
+                  <Link
+                    className="mt-1"
+                    target="_blank"
+                    href="https://wa.me/+2349160004254"
+                  >
                     +2349160004254
                   </Link>
                 </div>

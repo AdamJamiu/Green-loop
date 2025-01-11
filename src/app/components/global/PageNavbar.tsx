@@ -37,14 +37,14 @@ const PageNavbar = ({ className, dynamicLogo }: PageNavProps) => {
     <nav
       className={`${
         scrollPosition > 40
-          ? "backdrop-blur-lg shadow-lg bg-slate-100 top-0 right-0 left-0"
-          : "md:pt-4"
-      } ${className} w-full px-4 lg:px-10 2xl:pl-40 2xl:pr-52 lg:pr-40 fixed flex justify-between items-center font-satoshi ease duration-200 transition-all z-50`}
+          ? "backdrop-blur-xl bg- top-0 right-0 left-0"
+          : `md:pt-4 ${className}`
+      } w-full px-4 lg:px-10 2xl:pl-40 2xl:pr-52 lg:pr-40 fixed flex justify-between items-center font-satoshi ease duration-200 transition-all z-50`}
     >
       <Link href="/">
         <Image
           src={scrollPosition <= 40 && dynamicLogo ? logo_white : logo}
-          alt="Green loop logo"
+          alt="Greenloop logo"
           width={110}
           height={120}
           className="w-[100px] h-[60px] md:w-[120px] md:h-[90px]"
