@@ -15,6 +15,7 @@ import Footer from "./components/global/Footer";
 import Navbar from "./components/global/Navbar";
 import Link from "next/link";
 import { BiChevronRight } from "react-icons/bi";
+import Collectibles from "./components/Collectibles";
 
 export default function Home() {
   const TEXTS: string[] = ["Plastics", "Papers", "Cartons", "Metals", "Cans"];
@@ -93,7 +94,7 @@ export default function Home() {
 
         <WeAreMembersOf />
         <WhoWeserve />
-
+        <Collectibles />
         <HowItWorks />
         <WhysUs />
         <Footer />

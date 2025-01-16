@@ -5,6 +5,7 @@ import { FaUserPlus } from "react-icons/fa6";
 import { GiConfirmed } from "react-icons/gi";
 import { BsCardChecklist } from "react-icons/bs";
 import { TfiWallet } from "react-icons/tfi";
+import { PiTruckTrailer } from "react-icons/pi";
 import CurveSvg from "./CurveSvg";
 import { motion } from "framer-motion";
 
@@ -44,7 +45,7 @@ const HowItWorks = () => {
             description="Click on your preferred recycling option, fill in the required details, and submit your request"
           />
           <HowItWorkCard
-            Icon={TfiWallet}
+            Icon={PiTruckTrailer}
             title="Pickup schedule"
             description="Click on your preferred recycling option, fill in the required details, and submit your request"
           />

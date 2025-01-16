@@ -27,7 +27,7 @@ const MobileNav = ({ isOpen, setIsOpen }: IMobileNavProps) => {
           alt="logo"
           width={120}
           height={120}
-          className="w-[100px] h-[60px] md:w-[120px] md:h-[90px]"
+          className="w-[80px] h-[60px] md:w-[110px] md:h-[90px]"
         />
         <IoClose
           role="button"

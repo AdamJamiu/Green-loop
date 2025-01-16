@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import logo from "../../../images/greenloop.png";
-import logo_white from "../../../images/logo white.png";
+import logo from "../../../images/logo design white.png";
+// import logo_white from "../../../images/logo white.png";
 import NavDropdown from "../navbar/NavDropdown";
 import { company, help, products } from "@/data/nav";
 import { useEffect, useState } from "react";
@@ -42,7 +42,7 @@ const Navbar = () => {
           alt="Greenloop logo"
           width={110}
           height={120}
-          className="w-[90px] h-[60px] md:w-[120px] md:h-[90px]"
+          className="w-[80px] h-[60px] md:w-[110px] md:h-[90px]"
         />
       </Link>
 
@@ -71,9 +71,7 @@ const Navbar = () => {
       </div>
       <button
         onClick={() => setIsMobileNvOpen(true)}
-        className={`${
-          scrollPosition >= 40 ? "text-black" : "text-slate-100"
-        } md:hidden block`}
+        className="md:hidden block"
       >
         <RiMenu3Fill size={26} />
       </button>

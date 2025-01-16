@@ -11,7 +11,7 @@ const HowItWorkCard = ({ description, Icon, title }: THowItWorkCard) => {
     <div className="rounded-2xl pt-10 px-7 pb-16 w-full bg-[#DCFCE7] font-satoshi">
       <Icon size={34} className="float text-black" />
 
-      <h2 className="font-medium text-lg md:text-xl text-[#222] mt-5">
+      <h2 className="font-semibold text-lg md:text-xl text-[#222] mt-5">
         {title}
       </h2>
 
