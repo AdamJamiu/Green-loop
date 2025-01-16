@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Newsletter from "../footers/Newsletter";
 import BlobSvg from "./BlobSvg";
@@ -9,6 +11,8 @@ import logo from "../../../images/logo white.png";
 import Link from "next/link";
 
 const Footer = () => {
+  const date = new Date();
+  const year = date.getFullYear();
   return (
     <footer className="relative font-satoshi">
       <BlobSvg color="#1A1F1A" className="lg:block hidden" />
@@ -122,7 +126,7 @@ const Footer = () => {
                 helpdesk@greenloopcompany.com
               </Link>
               <Link
-                href="tel:+1234567890"
+                href="tel:+2349160004254"
                 aria-label="Call us at +1 234 567 890"
               >
                 +234 9160004254
@@ -132,7 +136,7 @@ const Footer = () => {
         </div>
 
         <div className="w-full text-center border-t border-t-[#cce6cc] py-6">
-          © 2025 GreenLoop. All rights reserved.
+          © {year} GreenLoop. All rights reserved.
         </div>
       </div>
     </footer>

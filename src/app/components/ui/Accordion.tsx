@@ -74,9 +74,9 @@ export const NavAccordion = ({
   }, [isExpanded]);
 
   return (
-    <div className="rounded-2xl px-2 md:px-4 lg:px-6 py-3 font-satoshi">
+    <div className="rounded-2xl px-2 md:px-4 lg:px-6 py-3 font-satoshi w-full">
       <button
-        className="flex justify-between items-center gap-3 text-black"
+        className="flex justify-between items-center gap-3 text-black w-full"
         onClick={() => setIsExpanded((prev) => !prev)}
       >
         <p className="text-lg">{label}</p>

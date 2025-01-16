@@ -42,7 +42,7 @@ const Navbar = () => {
           alt="Greenloop logo"
           width={110}
           height={120}
-          className="w-[80px] h-[60px] md:w-[110px] md:h-[90px]"
+          className="w-[90px] h-[70px] md:w-[110px] md:h-[90px]"
         />
       </Link>
 
