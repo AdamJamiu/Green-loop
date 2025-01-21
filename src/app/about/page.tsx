@@ -1,6 +1,6 @@
 "use client";
 
-import TopPageName from "../components/TopPageName";
+// import TopPageName from "../components/TopPageName";
 import team_image from "../../images/slide-4.jpg";
 import Image from "next/image";
 
@@ -14,10 +14,10 @@ import StickyFaq from "../components/StickyFaq";
 
 const Page = () => {
   return (
-    <div className="w-full h-full pb-20">
-      <TopPageName title="About Us" />
+    <div className="w-full h-full pb-20 font-satoshi">
+      {/* <TopPageName title="About Us" /> */}
 
-      <section className="pt-20 xl:px-28 font-satoshi">
+      <section className="pt-28 xl:px-28">
         <div className="lg:p-16 sm:p-4 grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-10">
           <Image
             src={team_image}
@@ -28,7 +28,7 @@ const Page = () => {
           />
 
           <div className="w-full font-medium text-3xl sm:text-3xl text-center sm:text-left px-4 pt-10">
-            <h1>Transforming Waste Into Wealth</h1>
+            <h1 className="font-semibold">Transforming Waste Into Wealth</h1>
 
             <p className="text-sm lg:text-base xl:text-lg mt-5 font-satoshi_Variable">
               Join GreenLoop Waste Services in revolutionizing waste management

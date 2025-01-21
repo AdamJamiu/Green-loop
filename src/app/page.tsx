@@ -32,7 +32,7 @@ export default function Home() {
             </p>
             <p className="font-satoshi_Variable">20 MINS ago</p>
           </div> */}
-          <div className="absolute inset-0 min-h-screen animate-wide bg-hero bg opacity-"></div>
+          <div className="absolute inset-0 min-h-screen animate-wide bg-hero bg-[#effbe8] opacity-"></div>
 
           <section className="h-full max-w-6xl w-full px-4 sm:px-0 sm:py-16 flex flex-col items-center isolate z-[90]">
             {/* <Image

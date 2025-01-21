@@ -16,38 +16,38 @@ const Team = () => {
 
       <div className="flex justify-start items-center flex-wrap gap-5 md:gap-16 lg:gap-20 gap-y-10 mt-14 mx-auto px-10 sm:px-0">
         <div className="">
-          <figure className="bg-white rounded-full">
-            <Image
-              src={team_01}
-              alt="Benjamin"
-              height={300}
-              width={300}
-              className="rounded-full object-contain"
-            />
-          </figure>
-          <p className="font-medium text-base sm:text-lg w-full text-center mt-4">
+          {/* <figure className="rounded-full"> */}
+          <Image
+            src={team_01}
+            alt="Benjamin"
+            height={300}
+            width={300}
+            className="rounded-full object-cover h-[200px] w-[200px]"
+          />
+          {/* </figure> */}
+          <p className="font-medium text-base sm:text-lg w-full text-center mt-5">
             Benjamin Olanrewaju Olopade
           </p>
-          <p className="text-sm w-full text-center font-satoshi_Variable">
+          <p className="text-sm lg:text-base w-full text-center font-satoshi_Variable">
             Founder
           </p>
         </div>
 
-        <div className="w-[200px]">
-          <figure className="bg-white rounded-full">
-            <Image
-              src={team_02}
-              alt="Avatar"
-              loading="lazy"
-              height={300}
-              width={300}
-              className="rounded-full"
-            />
-          </figure>
-          <p className="font-medium text-base sm:text-lg w-full text-center mt-4">
-            Oluwabusola sandra Olopade
+        <div className="">
+          {/* <figure className="bg-white rounded-full"> */}
+          <Image
+            src={team_02}
+            alt="Avatar"
+            loading="lazy"
+            height={300}
+            width={300}
+            className="rounded-full w-[200px] h-[200px] object-cover"
+          />
+          {/* </figure> */}
+          <p className="font-medium text-base sm:text-lg w-full text-center mt-5">
+            Oluwabusola Sandra Olopade
           </p>
-          <p className="text-sm w-full text-center font-satoshi_Variable">
+          <p className="text-sm lg:text-base w-full text-center font-satoshi_Variable">
             Co Founder
           </p>
         </div>

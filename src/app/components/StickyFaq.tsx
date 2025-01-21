@@ -1,10 +1,25 @@
 "use client";
 
 import Accordion from "./ui/Accordion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const StickyFaq = () => {
+  const ref = useRef(null); // Create a reference to the component
+  const isInView = useInView(ref, { once: true, margin: "-100px 0px" }); // Observe the component
+
   return (
-    <div className="w-full md:space-y-4 space-y-2">
+    <motion.div
+      ref={ref}
+      initial={{ y: 30, opacity: 0 }}
+      animate={isInView ? { y: 0, opacity: 1 } : {}}
+      transition={{
+        duration: 0.8,
+        ease: "easeOut",
+        delay: 0.8,
+      }}
+      className="w-full md:space-y-4 space-y-2"
+    >
       <Accordion
         label="What is GreenLoop Waste Services?"
         content="GreenLoop Waste Services is a waste management and recycling company in Nigeria. We use innovative technology and sustainable practices to help individuals, businesses, and communities monetize waste materials like plastics, e-waste, and metals through our GreenLoop App."
@@ -67,7 +82,7 @@ const StickyFaq = () => {
           </>
         }
       />
-    </div>
+    </motion.div>
   );
 };
 

@@ -28,12 +28,12 @@ const TopPageName = ({ title, subTitle }: ITopPageProps) => {
     <div
       className={`${
         scrollPosition > 40 ? "h-[10vh]" : "md:h-[30vh] h-[25vh]"
-      } z-10 bg-[#1A1F1A] flex flex-col justify-end items-center font-satoshi pb-10 gap-4`}
+      } z-10 bg-[#1A1F1A bg-transparent flex flex-col justify-end items-center font-satoshi pb-10 gap-4`}
     >
-      <h1 className="w-full text-center text-white text-xl md:text-4xl lg:text-5xl">
+      <h1 className="w-full text-center text-slate-900 text-xl md:text-4xl lg:text-5xl">
         {title}
       </h1>
-      <p className="w-full text-center text-gray-400 text-sm md:text-base">
+      <p className="w-full text-center text-slate-600 text-sm md:text-base">
         {subTitle}
       </p>
     </div>

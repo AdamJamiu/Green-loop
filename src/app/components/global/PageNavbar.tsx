@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import logo from "../../../images/greenloop.png";
-import logo_white from "../../../images/logo white.png";
+// import logo_white from "../../../images/logo white.png";
 import NavDropdown from "../navbar/NavDropdown";
 import { company, help, products } from "@/data/nav";
 import { useEffect, useState } from "react";
@@ -43,11 +43,11 @@ const PageNavbar = ({ className, dynamicLogo }: PageNavProps) => {
     >
       <Link href="/">
         <Image
-          src={scrollPosition <= 40 && dynamicLogo ? logo_white : logo}
+          src={logo}
           alt="Greenloop logo"
           width={110}
           height={120}
-          className="w-[100px] h-[60px] md:w-[120px] md:h-[90px]"
+          className="w-[100px] h-[60px] md:w-[130px] md:h-[110px]"
         />
       </Link>
 

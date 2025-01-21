@@ -12,13 +12,20 @@ import { FaInstagram } from "react-icons/fa";
 import { BsSend } from "react-icons/bs";
 import { RiLinkedinBoxLine } from "react-icons/ri";
 import AppInput, { AppTextArea } from "../components/ui/Input";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import StickyFaq from "../components/StickyFaq";
+import { motion, useInView } from "framer-motion";
 
 const Page = () => {
   const [fullName, setFullName] = useState("");
+  const messageInputRef = useRef(null); // Create a reference to the component
+  const ismessageInputInView = useInView(messageInputRef, {
+    once: true,
+    margin: "-100px 0px",
+  }); // Observe the component
+
   return (
-    <div className="w-full h-full pb-20 font-satoshi">
+    <div className="w-full h-full py-20 font-satoshi">
       <TopPageName
         title="We'd love to hear from you"
         subTitle="Have any questions or feedback? We'd love to hear from you"
@@ -27,7 +34,15 @@ const Page = () => {
       <div className="flex justify-center items-center w-full">
         <section className="md:pt-20 xl:px-28 font-satoshi max-w-[80rem] p-4">
           <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div className="w-full flex justify-center items-center flex-col gap-5">
+            <motion.div
+              initial={{ y: 30, opacity: 0 }} // Initial state: Slightly below and invisible
+              animate={{ y: 0, opacity: 1 }} // Final state: At its original position and visible
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+              className="w-full flex justify-center items-center flex-col gap-5"
+            >
               <h1 className="lg:font-semibold text-2xl sm:text-2xl md:text-4xl lg:text-5xl">
                 Reach out to us anywhere
               </h1>
@@ -35,9 +50,19 @@ const Page = () => {
                 Read through the FAQs and help articles, call, Whatsapp or use
                 the form here, we are always ready to serve you.
               </p>
-            </div>
+            </motion.div>
 
-            <Image src={team_image} alt="team image" />
+            <motion.div
+              initial={{ y: 30, opacity: 0 }} // Initial state: Slightly below and invisible
+              animate={{ y: 0, opacity: 1 }} // Final state: At its original position and visible
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+                delay: 0.8,
+              }}
+            >
+              <Image src={team_image} alt="team image" className="rounded-xl" />
+            </motion.div>
           </div>
 
           {/*  */}
@@ -115,7 +140,16 @@ const Page = () => {
               </div>
             </div>
 
-            <div className="w-full rounded-3xl p-4 sm:p-10 shadow-md bg-white">
+            <motion.div
+              ref={messageInputRef}
+              initial={{ y: 30, opacity: 0 }}
+              animate={ismessageInputInView ? { y: 0, opacity: 1 } : {}}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
+              className="w-full rounded-3xl p-4 sm:p-10 shadow-md bg-white"
+            >
               <h3 className="text-lg">Let's start a conversation</h3>
 
               <form className="flex flex-col gap-6">
@@ -148,7 +182,7 @@ const Page = () => {
                   <BsSend />
                 </button>
               </form>
-            </div>
+            </motion.div>
           </div>
 
           {/* FAQ */}

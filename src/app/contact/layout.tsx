@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <main className="bg-[#F1F1F8] overflow-hidden">
-      <PageNavbar className="text-slate-100" dynamicLogo />
+      <PageNavbar />
       {children}
       <Footer />
     </main>

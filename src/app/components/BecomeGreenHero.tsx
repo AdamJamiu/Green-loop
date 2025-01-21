@@ -1,13 +1,13 @@
 "use client";
 
-import TextLoopAnimation from "./TextLoopAnimation";
+// import TextLoopAnimation from "./TextLoopAnimation";
 import mockup from "../../images/mobile-mockup.png";
 import Image from "next/image";
 import Link from "next/link";
 import { BiChevronRight } from "react-icons/bi";
 import { motion } from "framer-motion";
 import TypewriterTextLoop from "./TypewriterTextLoop";
-import BlobSvg from "./global/BlobSvg";
+// import BlobSvg from "./global/BlobSvg";
 
 const BecomeGreenHero = () => {
   const TEXTS: string[] = [

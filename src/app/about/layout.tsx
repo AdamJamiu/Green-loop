@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <main className="bg-[#F1F1F8] scroll-smooth">
-      <PageNavbar dynamicLogo={true} className="text-slate-100" />
+      <PageNavbar dynamicLogo={true} />
       {children}
       <Footer />
     </main>
