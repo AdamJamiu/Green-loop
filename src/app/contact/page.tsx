@@ -15,6 +15,7 @@ import AppInput, { AppTextArea } from "../components/ui/Input";
 import { useRef, useState } from "react";
 import StickyFaq from "../components/StickyFaq";
 import { motion, useInView } from "framer-motion";
+import LocationMap from "../components/LocationMap";
 
 const Page = () => {
   const [fullName, setFullName] = useState("");
@@ -66,6 +67,10 @@ const Page = () => {
           </div>
 
           {/*  */}
+
+          <div className="w- my-20 w-screen">
+            <LocationMap />
+          </div>
 
           <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 mt-28">
             <div className="w-full">

@@ -11,13 +11,15 @@ import { PiHandshakeDuotone } from "react-icons/pi";
 // import Accordion from "../components/ui/Accordion";
 import Team from "../components/Team";
 import StickyFaq from "../components/StickyFaq";
+import LocationMap from "../components/LocationMap";
 
 const Page = () => {
   return (
     <div className="w-full h-full pb-20 font-satoshi">
       {/* <TopPageName title="About Us" /> */}
 
-      <section className="pt-28 xl:px-28">
+      <section className="pt-28 xl:px-28 w-full">
+        {/* <LocationMap /> */}
         <div className="lg:p-16 sm:p-4 grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-10">
           <Image
             src={team_image}
@@ -158,6 +160,10 @@ const Page = () => {
 
           {/* Team section */}
           <Team />
+
+          <div className="my-20 flex justify-center items-center mx-auto">
+            <LocationMap />
+          </div>
 
           <div
             id="faqs"
