@@ -12,6 +12,7 @@ import { PiHandshakeDuotone } from "react-icons/pi";
 import Team from "../components/Team";
 import StickyFaq from "../components/StickyFaq";
 import LocationMap from "../components/LocationMap";
+import MakeDifferenceSection from "../components/MakeDifferenceSection";
 
 const Page = () => {
   return (
@@ -43,6 +44,9 @@ const Page = () => {
             </p>
           </div>
         </div>
+
+        {/* Make a ifference section */}
+        <MakeDifferenceSection />
 
         <div id="mission" className="custom-scroll">
           <div

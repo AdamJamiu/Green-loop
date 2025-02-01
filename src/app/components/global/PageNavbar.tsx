@@ -47,7 +47,7 @@ const PageNavbar = ({ className, dynamicLogo }: PageNavProps) => {
           alt="Greenloop logo"
           width={110}
           height={120}
-          className="w-[100px] h-[60px] md:w-[130px] md:h-[110px]"
+          className="w-[100px] h-[80px] md:w-[130px] md:h-[110px]"
         />
       </Link>
 
