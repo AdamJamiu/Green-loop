@@ -23,6 +23,7 @@ import team10 from "../../images/team/DSC_4451.jpg";
 import team11 from "../../images/team/DSC_4450.jpg";
 import team12 from "../../images/team/DSC_4459.jpg";
 import team13 from "../../images/team/DSC_4471.jpg";
+import { price_list } from "@/data/price";
 
 const Collectibles = () => {
   return (
@@ -76,7 +77,37 @@ const Collectibles = () => {
         </Swiper>
       </div>
 
-      <div className="relative w-full h-80 mt-10">
+      {/* Price list */}
+
+      <div className="py-16 bg-[#E9F9E0]">
+        <h2 className="text-black font-semibold text-left md:text-center text-2xl md:text-3xl lg:text-4xl">
+          Item Price List
+        </h2>
+
+        <div className="max-w-4xl sm:mx-auto w-full overflow-hidden mt-16">
+          <table className="min-w-max w-full overflow-x-auto border border-gray-800">
+            <thead className="border-b border-gray-800">
+              <th className="rounded-tl-lg py-3 pl-7 text-left border-r border-gray-800">
+                Item
+              </th>
+              <th className="rounded-tr-lg p-3 text-left">Value (Per 1)</th>
+            </thead>
+
+            <tbody className="w-full">
+              {price_list.map((item, index) => (
+                <tr key={index} className="w-full border-b border-gray-800">
+                  <td className="border-r border-gray-800 p-4 pl-7">
+                    {item.name}
+                  </td>
+                  <td className="p-4">{item.price}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div className="relative w-full h-80">
         <div className="flex justify-center items-center h-full w-full pl-4 pr-2 z-50">
           <div className="w-full sm:w-[90%] md:w-[70%] lg:w-[50%] flex justify-center items-center">
             <h1 className="self-center font-semibold text-white text-3xl sm:text-4xl md:text-5xl z-50 isolate text-center">
