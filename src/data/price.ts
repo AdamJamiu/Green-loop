@@ -4,7 +4,7 @@ export const price_list = [
     price: "N5",
   },
   {
-    name: "2 Aluminum Cans",
+    name: "1 Aluminum Can",
     price: "N5",
   },
   {
