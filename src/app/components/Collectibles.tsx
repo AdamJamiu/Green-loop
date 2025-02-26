@@ -77,7 +77,7 @@ const Collectibles = () => {
         </Swiper>
       </div>
 
-      {/* Price list */}
+      {/* Price list*/}
 
       <div className="py-16 bg-[#E9F9E0]">
         <h2 className="text-black font-semibold text-left md:text-center text-2xl md:text-3xl lg:text-4xl">
