@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, Poppins, Raleway } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
+import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 // import Navbar from "./components/global/Navbar";
 // import Footer from "./components/global/Footer";
@@ -10,6 +11,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import WhatsappStickyButton from "./components/global/WhatsappStickyButton";
+import { ToastContainer } from "react-toastify";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -42,6 +44,8 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${inter.variable} antialiased scroll-smooth`}
       >
+        <ToastContainer autoClose={3000} hideProgressBar={true} theme="light" />
+
         <main className="bg-gray-50 overflow-hidden">
           {/* <Navbar /> */}
           {children}
