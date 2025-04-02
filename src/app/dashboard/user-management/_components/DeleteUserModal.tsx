@@ -1,7 +1,7 @@
 "use client";
 
 import Modal from "@/app/components/ui/Modal";
-import { adminCaller } from "@/app/interceptors";
+import { adminCaller } from "@/interceptors";
 import { useParams, useRouter } from "next/navigation";
 import { Dispatch, SetStateAction, useState } from "react";
 import { toast } from "react-toastify";

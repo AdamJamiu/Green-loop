@@ -1,6 +1,6 @@
 "use client";
 
-import { schedule } from "@/app/data/dashboard";
+import { schedule } from "@/data/dashboard";
 import { useState } from "react";
 import { MdOutlineChevronLeft, MdOutlineChevronRight } from "react-icons/md";
 

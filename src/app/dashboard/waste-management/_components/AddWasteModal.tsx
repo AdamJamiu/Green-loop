@@ -1,8 +1,8 @@
 "use client";
 
 import Modal from "@/app/components/ui/Modal";
-import MultiSelect from "@/app/components/ui/MultiSelect";
-import { adminCaller } from "@/app/interceptors";
+// import MultiSelect from "@/app/components/ui/MultiSelect";
+import { adminCaller } from "@/interceptors";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Dispatch, SetStateAction, useState } from "react";
 import { GoPlus } from "react-icons/go";
@@ -66,11 +66,11 @@ const AddWasteModal = ({ isOpen, setIsOpen }: IProps) => {
             />
           </div>
 
-          <MultiSelect
+          {/* <MultiSelect
             label="Waste category"
             selectedValues={selectedCategories}
             setSelectedValues={setSelectedCategories}
-          />
+          /> */}
 
           <button className="w-max mt-10 sm:text-base text-sm rounded-lg bg-primary text-white flex justify-start items-center gap-1 h-10 px-4 ease transition-all hover:opacity-60 font-clash_display">
             <GoPlus size={22} />

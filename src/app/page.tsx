@@ -1,12 +1,5 @@
 import TextLoopAnimation from "./components/TextLoopAnimation";
-// import Image from "next/image";
 
-// image imports
-// import world_map from "../images/8.jpg";
-// import play_store from "../images/get-it-on-google-play-badge.png";
-// import app_store from "../images/app store badge.png";
-// import user1 from "../images/User1.png";
-// import user2 from "../images/User2.png";
 import WhysUs from "./components/WhyUs";
 import WeAreMembersOf from "./components/WeAreMembersOf";
 import HowItWorks from "./components/HowItWorks";

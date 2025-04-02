@@ -1,12 +1,12 @@
 "use client";
 
 import AdminAuthWrapper from "@/app/components/auth/AdminAuth";
-import { adminCaller } from "@/app/interceptors";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 import { BiTrash } from "react-icons/bi";
 import DeleteUserModal from "../_components/DeleteUserModal";
 import { useState } from "react";
+import { adminCaller } from "@/interceptors";
 
 export default function Page() {
   const params = useParams();

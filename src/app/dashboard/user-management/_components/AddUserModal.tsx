@@ -3,12 +3,12 @@
 import AppInput from "@/app/components/ui/Input";
 import Modal from "@/app/components/ui/Modal";
 import Select, { IOption } from "@/app/components/ui/Select";
-import { adminCaller } from "@/app/interceptors";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Dispatch, SetStateAction, useState } from "react";
 import { GoPlus } from "react-icons/go";
 import { IRolesListResponse } from "./RolesTable";
 import { toast } from "react-toastify";
+import { adminCaller } from "@/interceptors";
 
 interface IProps {
   isOpen: boolean;

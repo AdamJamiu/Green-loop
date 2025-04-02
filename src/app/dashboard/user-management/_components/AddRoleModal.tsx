@@ -1,7 +1,7 @@
 "use client";
 
 import Modal from "@/app/components/ui/Modal";
-import { adminCaller } from "@/app/interceptors";
+import { adminCaller } from "@/interceptors";
 import { Dispatch, FormEventHandler, SetStateAction, useState } from "react";
 import { GoPlus } from "react-icons/go";
 

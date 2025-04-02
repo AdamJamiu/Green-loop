@@ -1,6 +1,6 @@
 "use client";
 
-import { waste_recycled } from "@/app/data/dashboard";
+import { waste_recycled } from "@/data/dashboard";
 import { Bar, BarChart, CartesianGrid, Tooltip, XAxis, YAxis } from "recharts";
 
 const WasteRecycleChart = () => {

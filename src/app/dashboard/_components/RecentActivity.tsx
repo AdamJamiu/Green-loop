@@ -1,6 +1,6 @@
 "use client";
 
-import { activity } from "@/app/data/dashboard";
+import { activity } from "@/data/dashboard";
 import { useState } from "react";
 import { MdOutlineChevronRight, MdOutlineChevronLeft } from "react-icons/md";
 

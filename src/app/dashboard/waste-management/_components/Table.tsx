@@ -13,9 +13,9 @@ import Menu from "@/app/components/ui/Menu";
 import { FaRegEye } from "react-icons/fa6";
 import { MdOutlineEdit } from "react-icons/md";
 import { useQuery } from "@tanstack/react-query";
-import { adminCaller } from "@/app/interceptors";
-import LoadingSkeleton from "@/app/components/ui/LoadingSkeleton";
 import { useRouter } from "next/navigation";
+import { adminCaller } from "@/interceptors";
+import LoadingSkeleton from "@/app/components/ui/LoadingSkeleton";
 
 interface ITable {
   onOpenModal: () => void;

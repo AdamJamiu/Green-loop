@@ -60,9 +60,8 @@ const Page = () => {
             <Image src={logo} alt="logo" height={145} width={145} />
           </Link>
 
-          <h2 className="mt-16 text-[#cbd5e1] text-xl sm:text-2xl sm:w-[69%]">
-            Get insights to make better business
-            <br /> decisions
+          <h2 className="mt-16 text-[#cbd5e1] text-xl sm:text-2xl sm:w-[69%] font-satoshi">
+            Make Every Decision Count for a Sustainable Tomorrow
           </h2>
         </div>
       </div>
@@ -91,6 +90,12 @@ const Page = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 label="Password"
               />
+              <Link
+                href="/forgot-password"
+                className="text-blue-500 hover:underline underline text-sm italic"
+              >
+                Forgot password
+              </Link>
             </div>
           </div>
 
@@ -101,13 +106,22 @@ const Page = () => {
             </div>
           </div> */}
 
-          <button
-            disabled={loading}
-            onClick={handleSubmit}
-            className="px-4 py-2 rounded-3xl bg-primary_green text-white mt-14 hover:bg-primary_success ease transition-all disabled:opacity-45"
-          >
-            Login
-          </button>
+          <div className="w-full flex justify-between items-center gap-5 mt-14">
+            <button
+              disabled={loading}
+              onClick={handleSubmit}
+              className="px-4 py-2 rounded-3xl bg-primary_green text-white hover:bg-primary_success ease transition-all disabled:opacity-45"
+            >
+              Login
+            </button>
+
+            <Link
+              href="/verify"
+              className="text-blue-500 hover:underline underline"
+            >
+              Verify account
+            </Link>
+          </div>
 
           <div className="flex justify-start items-center gap-2 mt-5 font-satoshi_Variable">
             <p>New to GreenLoop?</p>

@@ -1,11 +1,11 @@
 "use client";
 
-import { trends } from "@/app/data/dashboard";
 import { useState } from "react";
 import { MdOutlineChevronRight, MdOutlineChevronLeft } from "react-icons/md";
 import { formatCurrency } from "@/app/utils/utils";
 import ProgressBar from "../../_components/Progress";
 import Select, { IOption } from "@/app/components/ui/Select";
+import { trends } from "@/data/dashboard";
 
 const options = [
   {

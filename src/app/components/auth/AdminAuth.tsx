@@ -13,7 +13,7 @@ const AdminAuthWrapper = ({ children }: { children: ReactNode }) => {
 
     if (!storedToken) {
       sessionStorage.clear();
-      navigate.replace("/");
+      navigate.replace("/login");
     }
   }, []);
 

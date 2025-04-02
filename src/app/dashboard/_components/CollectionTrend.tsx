@@ -1,10 +1,10 @@
 "use client";
 
-import { trends } from "@/app/data/dashboard";
 import { useState } from "react";
 import { MdOutlineChevronRight, MdOutlineChevronLeft } from "react-icons/md";
 import ProgressBar from "./Progress";
 import { formatCurrency } from "@/app/utils/utils";
+import { trends } from "@/data/dashboard";
 
 const CollectionTrend = () => {
   const itemsPerPage = 5;

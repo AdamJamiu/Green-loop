@@ -58,14 +58,14 @@ export default function Page() {
           </div>
 
           <div className="w-full overflow-x-auto">
-            <WasteRecycleChart />
+            {/* <WasteRecycleChart /> */}
           </div>
-          <RecentSchedule />
+          {/* <RecentSchedule /> */}
         </div>
 
         <div className="w-full flex flex-col md:flex-row lg:flex-col sm:gap-7 md:gap-10 lg:gap-7 justify-start items-start h-full">
-          <RecentActivity />
-          <CollectionTrend />
+          {/* <RecentActivity /> */}
+          {/* <CollectionTrend /> */}
         </div>
       </div>
       {/* </section> */}

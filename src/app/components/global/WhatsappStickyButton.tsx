@@ -1,7 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsappStickyButton = () => {
+  const pathname = usePathname();
+
+  if (pathname.includes("/register") || pathname.includes("/login")) {
+    return;
+  }
   return (
     <Link
       href="https://wa.me/+2349160004254"
