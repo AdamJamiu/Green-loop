@@ -14,6 +14,7 @@ const EnterNewPassword = () => {
   const navigate = useRouter();
   const [email, setEmail] = useState("");
   const [token, setToken] = useState("");
+  const [noTokenEmailError, setNoTokenEmailError] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     try {
@@ -47,22 +48,31 @@ const EnterNewPassword = () => {
       }
     } catch (err: any) {
       setLoading(false);
-      toast.error(
-        err?.response?.data?.message || "Error generating reset token."
-      );
+      toast.error(err?.response?.data?.message || "Error resetting password.");
       console.log(err);
     }
   };
 
-  console.log(email, token);
-
   useEffect(() => {
     if (typeof window !== null) {
       const urlParams = new URLSearchParams(window.location.search);
-      setEmail(urlParams.get("email") || "");
-      setToken(urlParams.get("token") || "");
+
+      const retreivedEmail = urlParams.get("email");
+      const retreivedToken = urlParams.get("token");
+
+      if (retreivedEmail || retreivedToken) {
+        setToken(urlParams.get("token") || "");
+
+        setEmail(urlParams.get("email") || "");
+      } else {
+        setNoTokenEmailError(true);
+      }
     }
   }, []);
+
+  if (noTokenEmailError) {
+    return <ErrorPage />;
+  }
 
   return (
     <div className="h-full w-full col-span-8 flex flex-col justify-center items-center overflow-y-auto">
@@ -79,7 +89,7 @@ const EnterNewPassword = () => {
             label="New password"
             onChange={(e) => setPassword(e.target.value)}
             className="w-full"
-            value={email}
+            value={password}
             type="password"
             name="password"
             required
@@ -88,7 +98,7 @@ const EnterNewPassword = () => {
           <AppInput
             label="Confirm password"
             onChange={(e) => setConfirmPassword(e.target.value)}
-            value={email}
+            value={confirmPassword}
             className="w-full"
             required
             type="password"
@@ -114,6 +124,25 @@ const EnterNewPassword = () => {
           </button>
         </form>
       </section>
+    </div>
+  );
+};
+
+const ErrorPage = () => {
+  return (
+    <div className="h-full w-full col-span-8 flex flex-col justify-center items-center overflow-y-auto">
+      <h1 className="text-2xl font-bold text-red-600">
+        Invalid or Missing Credentials
+      </h1>
+      <p className="mt-4 text-gray-600">
+        The reset password link is invalid or missing required parameters.
+      </p>
+      <Link
+        href="/login"
+        className="mt-6 px-4 py-2 bg-primary_green text-white rounded-md hover:opacity-45 transition"
+      >
+        Go to Login
+      </Link>
     </div>
   );
 };

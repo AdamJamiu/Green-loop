@@ -22,7 +22,9 @@ const ResetPassword = ({ setActive, setEmail, email }: IResetPassword) => {
       e.preventDefault();
       setLoading(true);
 
-      const formData = new FormData(e.currentTarget);
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+
       const email = formData.get("email");
 
       const { data } = await axios.post(
@@ -42,6 +44,7 @@ const ResetPassword = ({ setActive, setEmail, email }: IResetPassword) => {
       if (data) {
         console.log("data", data);
         setOpen(true);
+        form.reset();
         // setActive(2);
         // toast.success("Email token sent!");
       } else {

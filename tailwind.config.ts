@@ -29,6 +29,7 @@ export default {
         secondary: "#4D76CE",
         secondary200: "#DBE4F5",
         error100: "#FBE8E8",
+        error500: "#DD0000",
         error900: "#DD0000",
       },
       backgroundColor: {

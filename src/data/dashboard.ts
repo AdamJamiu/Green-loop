@@ -201,3 +201,93 @@ export const waste_recycled = [
     amt: 2100,
   },
 ];
+
+export const transaction_history = [
+  {
+    id: 1234,
+    category: "Plastic",
+    type: "Pick Up",
+    address: "123 , ABC Rd, Lagos",
+    date: "12 January, 2025",
+    status: "completed",
+  },
+  {
+    id: 4321,
+    category: "Plastic",
+    type: "Drop off",
+    address: "123 , ABC Rd, Lagos",
+    date: "12 January, 2025",
+    status: "pending",
+  },
+  {
+    id: 3411,
+    category: "Plastic",
+    type: "Pick Up",
+    address: "123 , ABC Rd, Lagos",
+    date: "12 January, 2025",
+    status: "missed",
+  },
+];
+
+export const dashboard_metrics = [
+  {
+    label: "Waste recycled",
+    amount: "5000",
+    date: "Since last week",
+    percentage: "68.48",
+    chartData: [
+      { value: 2000 },
+      { value: 3000 },
+      { value: 2500 },
+      { value: 2800 },
+      { value: 3200 },
+      { value: 4000 },
+      { value: 4200 },
+    ],
+  },
+  {
+    label: "Points earned",
+    amount: "5000",
+    date: "Since last week",
+    percentage: "10.46",
+    chartData: [
+      { value: 2000 },
+      { value: 3000 },
+      { value: 2500 },
+      { value: 2800 },
+      { value: 3200 },
+      { value: 4000 },
+      { value: 4200 },
+    ],
+  },
+  {
+    label: "Points redeemed",
+    amount: "4200",
+    date: "Since last week",
+    percentage: "-68.48",
+    chartData: [
+      { value: 2000 },
+      { value: 3000 },
+      { value: 2500 },
+      { value: 2800 },
+      { value: 3200 },
+      { value: 4000 },
+      { value: 4200 },
+    ],
+  },
+  {
+    label: "Refferals",
+    amount: "12",
+    date: "",
+    percentage: "0",
+    chartData: [
+      { value: 2000 },
+      { value: 3000 },
+      { value: 2500 },
+      { value: 2800 },
+      { value: 3200 },
+      { value: 4000 },
+      { value: 4200 },
+    ],
+  },
+];

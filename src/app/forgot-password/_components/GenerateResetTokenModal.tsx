@@ -11,11 +11,14 @@ interface IProps {
 
 const GenerateResetTokenModal = ({ open, onClose }: IProps) => {
   return (
-    <Modal isOpen={open} title="Request Submitted" onClose={onClose}>
-      <div className="max-w-[500px] w-full bg-white rounded p-5 sm:p-10 fixed inset-0 top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%] z-50 shadow-md h-fit max-h-[600px] overflow-y-auto font-satoshi">
+    <Modal isOpen={open} title="Email sent" onClose={onClose}>
+      <div className="max-w-[500px] w-full bg-white p-10">
         <Image
           src="https://superapp.tdafrica.com/images/6.jpg"
           alt="svg image"
+          width={200}
+          height={300}
+          className="w-full h-full"
         />
         {/* <h1 className="w-full text-center font-bold text-2xl text-gray-900">
           

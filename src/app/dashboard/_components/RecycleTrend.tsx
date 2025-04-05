@@ -6,7 +6,7 @@ import ProgressBar from "./Progress";
 import { formatCurrency } from "@/app/utils/utils";
 import { trends } from "@/data/dashboard";
 
-const CollectionTrend = () => {
+const RecycleTrend = () => {
   const itemsPerPage = 5;
   const totalPages = Math.ceil(trends.length / itemsPerPage);
   const [page, setPage] = useState<number>(1);
@@ -27,10 +27,10 @@ const CollectionTrend = () => {
   const currentItems = trends.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <div className="pb-4 p-4 w-full font-clash_display bg-white rounded-lg">
+    <div className="p-4 w-full font-clash_display bg-white rounded-lg">
       <div className="w-full flex justify-between items-center gap-3">
         <h2 className="font-clash_display_medium text-neutral-700 text-sm sm:text-base md:text-lg xl:text-xl w-full text-left">
-          Collection trend
+          Recycle trend
         </h2>
 
         <div></div>
@@ -75,4 +75,4 @@ const CollectionTrend = () => {
   );
 };
 
-export default CollectionTrend;
+export default RecycleTrend;

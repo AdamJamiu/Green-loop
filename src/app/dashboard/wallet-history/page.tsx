@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import CollectionTrend from "../_components/CollectionTrend";
+import CollectionTrend from "../_components/RecycleTrend";
 import FirstCard from "../_components/FirstCard";
 import RecentActivity from "../_components/RecentActivity";
 import RecentSchedule from "../_components/RecentSchedule";

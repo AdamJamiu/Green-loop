@@ -102,6 +102,20 @@
   font-style: italic;
 }
 
+@font-face {
+  font-family: "gilroy";
+  src:
+    url("../fonts/gilroy/Gilroy-Medium.ttf") format("woff"),
+    url("../fonts/gilroy/Gilroy-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+.gilroy {
+  font-family: "gilroy" !important;
+}
+
 @keyframes slideIn {
   from {
     transform: translateY(-100%);
@@ -151,6 +165,7 @@
     transform: scale(0);
   }
 }
+
 
 @font-face {
   font-family: "Clash Display";

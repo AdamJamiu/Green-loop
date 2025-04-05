@@ -6,9 +6,16 @@ interface ModalProps {
   onClose: () => void;
   children: React.ReactNode;
   title?: string;
+  withCloseButton?: boolean;
 }
 
-const Modal = ({ children, isOpen, onClose, title }: ModalProps) => {
+const Modal = ({
+  children,
+  isOpen,
+  onClose,
+  title,
+  withCloseButton = true,
+}: ModalProps) => {
   const contentRef = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(isOpen);
 
@@ -77,9 +84,11 @@ const Modal = ({ children, isOpen, onClose, title }: ModalProps) => {
                 {title}
               </h2>
             )}
-            <button className="" onClick={handleClose}>
-              <CgClose size={23} className="text-neutrals600" />
-            </button>
+            {withCloseButton ? (
+              <button className="" onClick={handleClose}>
+                <CgClose size={23} className="text-neutrals600" />
+              </button>
+            ) : null}
           </div>
 
           {children}
