@@ -1,3 +1,5 @@
+"use client";
+
 import AdminAuthWrapper from "../../components/auth/AdminAuth";
 import TransactionHistoryTable from "./_components/TransactionHistoryTable";
 import WalletBalanceCard from "./_components/WalletBalanceCard";
@@ -15,7 +17,7 @@ export default function Page() {
         </div>
       </div>
 
-      <TransactionHistoryTable data={[]} onOpenModal={() => console.log("")} />
+      <TransactionHistoryTable data={[]} onOpenModal={() => ""} />
     </AdminAuthWrapper>
   );
 }

@@ -159,7 +159,7 @@ const Navbar = () => {
           />
 
           <button
-            onClick={handleToggleSidebar}
+            // onClick={handleToggleSidebar}
             // onClick={() => setIsSidebarOpen(true)}
             className="p-2 relative rounded-full hover:bg-neutral-100 active:bg-neutral-200 focus:bg-neutral-100 ease transition-all block lg:hidden"
           >
