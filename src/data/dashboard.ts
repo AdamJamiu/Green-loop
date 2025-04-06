@@ -280,14 +280,36 @@ export const dashboard_metrics = [
     amount: "12",
     date: "",
     percentage: "0",
-    chartData: [
-      { value: 2000 },
-      { value: 3000 },
-      { value: 2500 },
-      { value: 2800 },
-      { value: 3200 },
-      { value: 4000 },
-      { value: 4200 },
-    ],
+    chartData: [],
+  },
+];
+
+export const wallet_transaction_history = [
+  {
+    id: 1234,
+    category: "Plastic",
+    type: "Airtime",
+    address: "123 , ABC Rd, Lagos",
+    date: "12 January, 2025",
+    status: "completed",
+    amount: "300",
+  },
+  {
+    id: 4321,
+    category: "Plastic",
+    type: "Electricity",
+    address: "123 , ABC Rd, Lagos",
+    date: "12 January, 2025",
+    status: "pending",
+    amount: "121",
+  },
+  {
+    id: 3411,
+    category: "Plastic",
+    type: "Points redeemed",
+    address: "123 , ABC Rd, Lagos",
+    date: "12 January, 2025",
+    status: "missed",
+    amount: "200",
   },
 ];

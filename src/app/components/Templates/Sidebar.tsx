@@ -8,10 +8,16 @@ import { CiSettings } from "react-icons/ci";
 import { CiLogout } from "react-icons/ci";
 // import useApp from "@/app/hooks/useApp";
 import { sidebarItems } from "@/data/sidebar";
+import logo from "../../../images/greenloop.png";
+import User2 from "../../../images/User2.png";
+import johnson from "../../../images/johnson.svg";
+import Image from "next/image";
 
 const Sidebar = () => {
   const [user, setUser] = useState<any>(null);
   const navigate = useRouter();
+
+  console.log("user", user);
 
   const handleLogOut = () => {
     sessionStorage.clear();
@@ -20,7 +26,7 @@ const Sidebar = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const storedUser = sessionStorage.getItem("green-loop-admin");
+      const storedUser = sessionStorage.getItem("green-loop-user");
       if (storedUser) {
         setUser(JSON.parse(storedUser));
       }
@@ -28,23 +34,20 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <aside className="fixed left-0 top-0 bottom-0 bg-primary pb-10 pt-6 w-[250px] z-20 lg:block hidden h-screen">
-      <div className="w-full">
-        <div className="px-4">
-          <img src="/logo.svg" alt="greenloop logo" className="mx-auto mb-7" />
-        </div>
+    <aside className="fixed left-0 top-0 bottom-0 bg-primary pb-10 pt-6 w-[250px] z-20 lg:block hidden h-screen gilroy">
+      <div className="w-full h-full">
+        <div className="mb-7 flex justify-start items-center gap-3 w-full pl-4">
+          <Image
+            width={35}
+            height={35}
+            src={User2}
+            className=""
+            alt="greenloop"
+          />
 
-        <div className="px-4">
-          <div className="flex justify-start items-center gap-3 w-full text-white bg-primary600 p-3 rounded-lg mb-5">
-            <img src="/johnsonD.png" alt="johnsonD" />
-            <div className="w-full">
-              <p className="text-xs lg:text-sm font-medium font-clash_display_medium">
-                {user?.userDetails?.fullName}
-              </p>
-              <p className="font-clash_display text-xs">
-                {user?.userDetails?.email}
-              </p>
-            </div>
+          <div className="">
+            <p className="font-medium text-sm text-white">Grenloop</p>
+            <p className="text-xs text-white">greenloopwaste.com</p>
           </div>
         </div>
 
@@ -61,9 +64,19 @@ const Sidebar = () => {
             ))}
           </div>
 
+          <div className="mt-12 flex justify-start items-center gap-3 w-full text-white bg-primary600 p-3 rounded-lg mb-5">
+            <Image width={35} height={35} src={johnson} alt="greenloop" />
+            <div className="w-full">
+              <p className="text-xs lg:text-sm font-medium ">
+                {user?.userDetails?.fullName}
+              </p>
+              <p className=" text-xs">{user?.userDetails?.email}</p>
+            </div>
+          </div>
+
           <button
             onClick={handleLogOut}
-            className="mt-7 justify-start items-center gap-3 hover:text-primary flex font-clash_display w-full text-white hover:bg-primary600 ease transition-all px-2 py-3 rounded-md"
+            className="mt-auto justify-start items-center gap-3 hover:text-primary flex  w-full text-white hover:bg-primary600 ease transition-all px-2 py-3 rounded-md"
           >
             <CiLogout size={24} />
             <p>Log out</p>
@@ -161,8 +174,8 @@ export const SidebarItem = ({ item, index }: { item: any; index: number }) => {
         onClick={() => handleToggle(index)}
         className={`${
           pathname.includes(item.href)
-            ? "font-clash_display_medium bg-primary600"
-            : "font-clash_display hover:bg-primary600 hover:text-primary"
+            ? " bg-primary600"
+            : " hover:bg-primary600 hover:text-primary"
         } flex items-center justify-between gap-3 w-full text-white ease transition-all px-2 py-3 rounded-md`}
       >
         <Link
@@ -194,7 +207,7 @@ export const SidebarItem = ({ item, index }: { item: any; index: number }) => {
               // onClick={handleToggle}
               className={`${
                 pathname === subItem.href ? "font-semibold" : ""
-              } block px-4 py-2 transition w-full hover:bg-primary600 font-clash_display`}
+              } block px-4 py-2 transition w-full hover:bg-primary600 `}
             >
               {subItem.label}
             </Link>

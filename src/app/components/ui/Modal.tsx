@@ -80,7 +80,7 @@ const Modal = ({
           {/* Header */}
           <div className="w-full flex justify-between items-center fixed top-1 left-0 right-0 px-3 py-4 bg-white z-10">
             {title && (
-              <h2 className="font-clash_display_semibold text-sm sm:text-base md:text-lg lg:text-xl">
+              <h2 className="_semibold text-sm sm:text-base md:text-lg lg:text-xl">
                 {title}
               </h2>
             )}

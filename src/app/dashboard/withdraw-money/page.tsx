@@ -21,10 +21,10 @@ export default function Page() {
     <AdminAuthWrapper>
       {/* <section className="relative bg-neutralBase min-h-screen py-10 p-4 sm:p-10 md:py-28 lg:py-32 md:pl-10 md:pr-8 lg:px-4 lg:pl-16 2xl:pl-20 lg:ml-[200px]"> */}
       {/* <div className="mt-10 sm:mt-0">
-        <h1 className="font-clash_display_semibold text-lg md:text-xl lg:text-2xl text-neutral-900">
+        <h1 className="_semibold text-lg md:text-xl lg:text-2xl text-neutral-900">
           Welcome, Admin
         </h1>
-        <h2 className="text-neutrals700 text-sm md:text-base font-clash_display">
+        <h2 className="text-neutrals700 text-sm md:text-base ">
           Here’s an overview of your Dashboard{" "}
         </h2>
       </div> */}

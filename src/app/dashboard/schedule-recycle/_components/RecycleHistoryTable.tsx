@@ -1,15 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BsThreeDots } from "react-icons/bs";
 import { MdOutlineChevronLeft, MdOutlineChevronRight } from "react-icons/md";
 import { LuChevronsUpDown } from "react-icons/lu";
-import { FiSearch } from "react-icons/fi";
-import { FaFilter } from "react-icons/fa6";
 import { GoPlus } from "react-icons/go";
-import Menu from "@/app/components/ui/Menu";
-import { FaRegEye } from "react-icons/fa6";
-import { MdOutlineEdit } from "react-icons/md";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { adminCaller } from "@/interceptors";
@@ -41,7 +35,7 @@ interface ITransactionsListResponse {
   referralCount: number;
 }
 
-const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
+const RecycleHistoryTable = ({ onOpenModal }: ITable) => {
   const itemsPerPage = 8;
   const [searchQuery, setSearchQuery] = useState("");
   const [filter, setFilter] = useState("all");
@@ -54,7 +48,7 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
   const { data: transaction_histor = [], isLoading } = useQuery<
     ITransactionsListResponse[]
   >({
-    queryKey: ["uers-list"],
+    queryKey: ["RecycleHistory"],
     queryFn: async () =>
       adminCaller.get("transactions").then((res) => res.data?.data),
     refetchOnWindowFocus: false,
@@ -114,8 +108,8 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
     <div className="w-full ">
       <div className="mb-2 w-full p-4 md:p-5 rounded-lg flex justify-between items-center gap-4 bg-white md:flex-nowrap flex-wrap">
         <div className="flex justify-start items-center gap-7 min-w-max">
-          <h2 className="font-semibold text-base lg:text-lg text-neutral-900 min-w-max">
-            Transaction History
+          <h2 className="font-semibold text-base xl:text-lg text-neutral-900 min-w-max w-full">
+            Recycle History
           </h2>
 
           <div className="min-w-max">
@@ -154,8 +148,8 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
             className={`${
               filter === "all"
                 ? "bg-primary100 text-primary_success"
-                : "text-neutral-300"
-            } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base lg:text-lg`}
+                : "text-neutral-400"
+            } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base xl:text-lg`}
           >
             All
           </button>
@@ -165,7 +159,7 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
               filter === "completed"
                 ? "bg-primary100 text-primary_success"
                 : "text-neutral-400"
-            } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base lg:text-lg`}
+            } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base xl:text-lg`}
           >
             Completed
           </button>
@@ -175,7 +169,7 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
               filter === "pending"
                 ? "bg-primary100 text-primary_success"
                 : "text-neutral-400"
-            } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base lg:text-lg`}
+            } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base xl:text-lg`}
           >
             Pending
           </button>
@@ -185,13 +179,13 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
               filter === "missed"
                 ? "bg-primary100 text-primary_success"
                 : "text-neutral-400"
-            } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base lg:text-lg`}
+            } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base xl:text-lg`}
           >
             Missed
           </button>
         </div>
 
-        <div className="flex justify-start items-center gap-2">
+        {/* <div className="flex justify-start items-center gap-2">
           <button
             onClick={onOpenModal}
             className="text-sm md:text-base flex justify-start flex-nowrap min-w-max items-center gap-2 bg-primary text-white h-12 px-4 rounded-lg ease transition-all duration-200 hover:opacity-55"
@@ -199,7 +193,7 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
             <GoPlus />
             <p className="">Recycle now</p>
           </button>
-        </div>
+        </div> */}
       </div>
 
       <div className="w-full overflow-x-auto">
@@ -212,16 +206,16 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
                   className="flex justify-start items-center gap-2"
                 >
                   <input className="h-4 w-4 rounded-lg bg-transparent border" />
-                  <p>Transaction ID</p>
+                  <p>Waste category</p>
                   <LuChevronsUpDown role="button" />
                 </div>
               </th>
-              <th className="p-3">
+              <th className="p-3 font-normal">
                 <div
                   title="Sort by customer"
                   className="flex justify-start items-center gap-2"
                 >
-                  <p>Transaction type</p>
+                  <p>Schedule type</p>
                   <LuChevronsUpDown role="button" />
                 </div>
               </th>
@@ -249,7 +243,7 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
               <th className="p-3 font-normal">
                 <p>Status</p>
               </th>
-              <th className="px-4 py-2 rounded-tr-xl"></th>
+              {/* <th className="px-4 py-2 rounded-tr-xl"></th> */}
             </tr>
           </thead>
           <tbody>
@@ -354,4 +348,4 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
   );
 };
 
-export default TransactionHistoryTable;
+export default RecycleHistoryTable;

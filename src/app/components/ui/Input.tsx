@@ -19,7 +19,8 @@ export type TAppInput = {
     | "email"
     | "password"
     | "search"
-    | "tel";
+    | "tel"
+    | "number";
   className?: string;
 };
 
@@ -43,12 +44,14 @@ const AppInput = ({
         isFocused ? "ring-gray-500 bg-gray-50" : "ring-transparent"
       } ${
         value ? "bg-gray-50" : ""
-      } relative ring-2 border border-gray-300 rounded-xl h-[58px] duration-200 ease-linear flex justify-start items-center pt-2 ${className}`}
+      } relative ring-2 border border-gray-300 rounded-lg h-[55px] duration-200 ease-linear flex justify-start items-center pt-2 ${className}`}
     >
       <p
         className={`${
-          isFocused || value ? "top-1 text-xs" : "top-4 text-sm"
-        } font-satoshi_Variable absolute left-3 ease-linear duration-150 transition-all`}
+          isFocused || value
+            ? "top-1 text-xs"
+            : "top-4 text-sm text-neutrals500"
+        }  absolute left-3 ease-linear duration-150 transition-all`}
       >
         {label}
       </p>
@@ -97,7 +100,7 @@ export const AppTextArea = ({
       <p
         className={`${
           isFocused || value ? "top-1" : "top-4"
-        } font-satoshi_Variable text-sm absolute left-3 ease-linear duration-150 transition-all`}
+        } text-sm absolute left-3 ease-linear duration-150 transition-all`}
       >
         {label}
       </p>

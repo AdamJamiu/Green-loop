@@ -34,7 +34,7 @@ export default function Page() {
     <AdminAuthWrapper>
       <section className="relative bg-neutralBase min-h-screen p-4 sm:p-10 md:py-24 md:pl-10 md:pr-8 lg:px-4 lg:pl-16 2xl:pl-20 lg:ml-[200px]">
         <div className="w-full">
-          <div className="w-full flex justify-between items-center bg-white p-3 md:p-4 mt-4 rounded-lg font-clash_display_medium">
+          <div className="w-full flex justify-between items-center bg-white p-3 md:p-4 mt-4 rounded-lg _medium">
             <div className="flex justify-start items-center gap-2 flex-nowrap">
               {/* {item?.imageUrl ? (
                         <img
@@ -47,7 +47,7 @@ export default function Page() {
                 <p className="text-base sm:text-lg md:text-xl text-neutral-900">
                   {data?.fullName}
                 </p>
-                <p className="font-clash_display text-neutral-600 text-sm md:text-base">
+                <p className=" text-neutral-600 text-sm md:text-base">
                   {data?.userType}
                 </p>
               </div>
@@ -63,8 +63,8 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="w-full bg-white p-3 md:p-4 mt-10 rounded-lg font-clash_display_medium">
-          <div className="font-clash_display_semibold text-lg sm:text-xl text-[24px] text-neutral-900 py-3 px-5 border-b border-neutral-100">
+        <div className="w-full bg-white p-3 md:p-4 mt-10 rounded-lg _medium">
+          <div className="_semibold text-lg sm:text-xl text-[24px] text-neutral-900 py-3 px-5 border-b border-neutral-100">
             Profile details
           </div>
 

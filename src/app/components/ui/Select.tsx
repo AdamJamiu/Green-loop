@@ -43,7 +43,10 @@ const Select = ({
   }, []);
 
   return (
-    <div className="relative w-full font-satoshi" ref={selectRef}>
+    <div className="relative w-full" ref={selectRef}>
+      {label ? (
+        <p className="mb-3 text-neutral-900 text-sm lg:text-base">{label}</p>
+      ) : null}
       {/* Select Box */}
       <div
         className={`${
@@ -51,14 +54,7 @@ const Select = ({
         } ease transition-all duration-200 flex items-center justify-between w-full p-3 border border-gray-300 rounded-lg cursor-pointer shadow-sm hover:border-gray-400 relative`}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <p
-          className={`${
-            selected?.value ? "top-1 text-xs" : "top-4 hidden"
-          } font-satoshi_Variable absolute left-3 ease-linear duration-150 transition-all`}
-        >
-          {label}
-        </p>
-        <span className="font-satoshi_Variable">
+        <span className="">
           {selected?.label
             ? selected.label
             : defaultValue || placeholder || "Select an option"}

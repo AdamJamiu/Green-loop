@@ -49,7 +49,7 @@ const DeleteUserModal = ({ isOpen, setIsOpen }: IProps) => {
           Are you sure you want to delete this user?
         </p>
 
-        <div className="w-full gap-4 flex items-center justify-start font-clash_display_medium mt-7">
+        <div className="w-full gap-4 flex items-center justify-start _medium mt-7">
           <button
             onClick={handleDelete}
             disabled={loading}

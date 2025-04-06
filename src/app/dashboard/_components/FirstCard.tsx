@@ -24,7 +24,7 @@ const FirstCard = ({
   total,
 }: IFirstCardProps) => {
   return (
-    <div className="rounded-lg bg-white w-full px-4 py-5 font-clash_display">
+    <div className="rounded-lg bg-white w-full px-4 py-5 ">
       <div className="sm:w-max w-full">
         <div className="flex justify-start items-center gap-2">
           <div
@@ -47,7 +47,7 @@ const FirstCard = ({
             )}
           </div>
           <div>
-            <p className="font-clash_display_semibold text-xl md:text-2xl text-neutral-700">
+            <p className="_semibold text-xl md:text-2xl text-neutral-700">
               {total}
             </p>
             <p className="text-neutrals500 text-xs sm:text-sm">{label}</p>

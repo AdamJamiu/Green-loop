@@ -42,8 +42,8 @@ export const sidebarItems = [
     active_icon: PiHandWithdrawFill,
   },
   {
-    href: "/dashboard/bills-airtime",
-    label: "Bills and Airtime",
+    href: "/dashboard/bills-utilities",
+    label: "Bills and utilities",
     icon: LiaMoneyBillWaveAltSolid,
     active_icon: FaMoneyBill1Wave,
   },

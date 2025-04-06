@@ -27,9 +27,9 @@ const RecycleTrend = () => {
   const currentItems = trends.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <div className="p-4 w-full font-clash_display bg-white rounded-lg">
+    <div className="p-4 w-full  bg-white rounded-lg gilroy">
       <div className="w-full flex justify-between items-center gap-3">
-        <h2 className="font-clash_display_medium text-neutral-700 text-sm sm:text-base md:text-lg xl:text-xl w-full text-left">
+        <h2 className="text-neutral-700 text-sm sm:text-base md:text-lg xl:text-xl w-full text-left font-semibold">
           Recycle trend
         </h2>
 
@@ -40,10 +40,10 @@ const RecycleTrend = () => {
         {currentItems.map((item, index) => (
           <div className="w-full" key={index}>
             <div className="flex justify-between items-center gap-3 mb-2">
-              <p className="font-clash_display_medium text-neutrals700 text-sm md:text-base">
+              <p className="text-neutrals700 text-sm md:text-base">
                 {item.name}
               </p>
-              <p className="font-clash_display text-neutrals700 text-sm">
+              <p className="text-neutrals700 text-sm">
                 {formatCurrency(item.amount)} kg
               </p>
             </div>

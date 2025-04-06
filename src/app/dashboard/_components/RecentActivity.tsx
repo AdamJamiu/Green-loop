@@ -28,9 +28,9 @@ const RecentActivity = () => {
   const currentItems = activity.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <div className="pb-4 p-4 w-full font-clash_display bg-white rounded-lg">
+    <div className="pb-4 p-4 w-full  bg-white rounded-lg">
       <div className="bg-white rounded-md">
-        <h2 className="font-clash_display_medium text-neutral-700 text-sm sm:text-base md:text-lg xl:text-xl w-full text-left">
+        <h2 className="_medium text-neutral-700 text-sm sm:text-base md:text-lg xl:text-xl w-full text-left">
           Recent Activity
         </h2>
       </div>
@@ -58,13 +58,11 @@ const RecentActivity = () => {
                     : "bg-secondary"
                 }`}
               ></div>
-              <p className="font-clash_display_medium text-neutrals700">
-                {item.title}
-              </p>
-              <p className="font-clash_display font-normal text-neutrals500 mt-2 text-xs md:text-sm">
+              <p className="_medium text-neutrals700">{item.title}</p>
+              <p className=" font-normal text-neutrals500 mt-2 text-xs md:text-sm">
                 {item.message}
               </p>
-              <p className="font-clash_display font-normal text-neutrals500 mt-2 text-xs md:text-sm">
+              <p className=" font-normal text-neutrals500 mt-2 text-xs md:text-sm">
                 {item.time}
               </p>
             </div>

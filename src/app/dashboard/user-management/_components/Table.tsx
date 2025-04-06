@@ -106,7 +106,7 @@ const Table = ({ onOpenModal }: ITable) => {
   }, [searchQuery, currentItems?.length]);
 
   return (
-    <div className="py-7 w-full font-clash_display">
+    <div className="py-7 w-full ">
       <div className="rounded-lg">
         <div className="mb-7 w-full py-3 rounded-lg flex justify-between items-center gap-4 bg-white px-4 md:flex-nowrap flex-wrap">
           <div className="flex justify-start items-center gap-4">
@@ -119,14 +119,12 @@ const Table = ({ onOpenModal }: ITable) => {
                 placeholder="Search user"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="rounded-lg text-sm md:text-base font-clash_display_medium bg-neutralBase w-full h-full pl-11"
+                className="rounded-lg text-sm md:text-base _medium bg-neutralBase w-full h-full pl-11"
               />
             </div>
 
             <button className="flex justify-start items-center gap-3 text-primary bg-primary100 h-12 px-4 rounded-lg ease transition-all duration-200 hover:bg-primary200">
-              <p className="font-clash_display_medium text-sm md:text-base">
-                Filter
-              </p>
+              <p className="_medium text-sm md:text-base">Filter</p>
               <FaFilter />
             </button>
           </div>
@@ -137,14 +135,14 @@ const Table = ({ onOpenModal }: ITable) => {
               className="text-sm md:text-base flex justify-start items-center gap-2 bg-primary text-white h-12 px-4 rounded-lg ease transition-all duration-200 hover:opacity-55"
             >
               <GoPlus />
-              <p className="font-clash_display">Add user</p>
+              <p className="">Add user</p>
             </button>
           </div>
         </div>
 
         <div className="w-full overflow-x-auto">
           <table className="w-full min-w-max whitespace-nowrap overflow-hidden px-4 md:px-5 py-4 bg-white rounded-lg">
-            <thead className="text-neutrals500 text-xs sm:text-sm md:text-base font-clash_display border-b border-neutrals100 rounded-t-lg">
+            <thead className="text-neutrals500 text-xs sm:text-sm md:text-base  border-b border-neutrals100 rounded-t-lg">
               <tr className="w-full">
                 <th className="p-3 rounded-tl-xl font-normal">
                   <div
@@ -191,7 +189,7 @@ const Table = ({ onOpenModal }: ITable) => {
               {filteredUsers?.map((item, index) => (
                 <tr
                   key={index}
-                  className="w-full border-b border-neutrals100 font-clash_display_medium text-neutrals500 text-xs md:text-sm ease transition-all duration-300 hover:bg-gray-100"
+                  className="w-full border-b border-neutrals100 _medium text-neutrals500 text-xs md:text-sm ease transition-all duration-300 hover:bg-gray-100"
                 >
                   <td className="px-2 py-4">
                     <div className="flex justify-start items-center gap-2 flex-nowrap">
@@ -204,7 +202,7 @@ const Table = ({ onOpenModal }: ITable) => {
                       ) : null}
                       <div>
                         <p>{item?.fullName}</p>
-                        <p className="font-clash_display">{item.email}</p>
+                        <p className="">{item.email}</p>
                       </div>
                     </div>
                   </td>
@@ -222,7 +220,7 @@ const Table = ({ onOpenModal }: ITable) => {
                         </button>
                       }
                       Content={
-                        <div className="w-full font-clash_display flex flex-col">
+                        <div className="w-full  flex flex-col">
                           <button
                             onClick={() => handleViewCustomer(item?.id)}
                             className="text-neutrals900 hover:bg-gray-100 flex justify-start items-center gap-2 text-sm md:text-base p-2 w-full rounded-md"
@@ -247,7 +245,7 @@ const Table = ({ onOpenModal }: ITable) => {
               {isLoading ? <LoadingSkeleton length={5} /> : null}
 
               {currentItems.length < 1 || !currentItems ? (
-                <tr className="w-full border-b border-neutrals100 font-clash_display_medium text-neutrals500 text-xs md:text-sm ease transition-all duration-300 hover:bg-gray-100">
+                <tr className="w-full border-b border-neutrals100 _medium text-neutrals500 text-xs md:text-sm ease transition-all duration-300 hover:bg-gray-100">
                   <td className="px-2 py-4" colSpan={5} rowSpan={5}>
                     No users found
                   </td>

@@ -152,7 +152,7 @@ const AddUserModal = ({ isOpen, setIsOpen }: IProps) => {
             </select>
           </div>
 
-          <button className="sm:text-base text-sm rounded-lg bg-primary text-white flex justify-start items-center gap-1 h-10 px-4 ease transition-all hover:opacity-60 font-clash_display">
+          <button className="sm:text-base text-sm rounded-lg bg-primary text-white flex justify-start items-center gap-1 h-10 px-4 ease transition-all hover:opacity-60 ">
             <GoPlus size={22} />
             <p>Add user</p>
           </button>

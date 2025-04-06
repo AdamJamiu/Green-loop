@@ -25,15 +25,15 @@ const RecentSchedule = () => {
   const currentItems = schedule.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <div className="py-7 w-full font-clash_display">
+    <div className="py-7 w-full ">
       <div className="bg-white rounded-md px-4 md:px-7 py-8">
-        <h2 className="font-clash_display_medium text-neutral-700 text-sm sm:text-base md:text-lg xl:text-xl">
+        <h2 className="_medium text-neutral-700 text-sm sm:text-base md:text-lg xl:text-xl">
           Recent schedule
         </h2>
 
         <div className="w-full overflow-x-auto">
           <table className="w-full mt-5 min-w-max">
-            <thead className="text-neutrals500 text-xs sm:text-sm md:text-base font-clash_display_medium bg-neutralBase rounded-t-lg">
+            <thead className="text-neutrals500 text-xs sm:text-sm md:text-base _medium bg-neutralBase rounded-t-lg">
               <td className="p-2 rounded-tl-xl">Schedule ID</td>
               <td className="p-2">Customer</td>
               <td className="p-2">Type</td>

@@ -1,21 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BsThreeDots } from "react-icons/bs";
 import { MdOutlineChevronLeft, MdOutlineChevronRight } from "react-icons/md";
 import { LuChevronsUpDown } from "react-icons/lu";
-import { FiSearch } from "react-icons/fi";
-import { FaFilter } from "react-icons/fa6";
-import { GoPlus } from "react-icons/go";
-import Menu from "@/app/components/ui/Menu";
-import { FaRegEye } from "react-icons/fa6";
-import { MdOutlineEdit } from "react-icons/md";
+// import { GoPlus } from "react-icons/go";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { adminCaller } from "@/interceptors";
 import LoadingSkeleton from "@/app/components/ui/LoadingSkeleton";
 import Select from "@/app/components/ui/Select";
-import { transaction_history } from "@/data/dashboard";
+import { wallet_transaction_history } from "@/data/dashboard";
 
 interface ITable {
   onOpenModal: () => void;
@@ -54,7 +48,7 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
   const { data: transaction_histor = [], isLoading } = useQuery<
     ITransactionsListResponse[]
   >({
-    queryKey: ["uers-list"],
+    queryKey: ["RecycleHistory"],
     queryFn: async () =>
       adminCaller.get("transactions").then((res) => res.data?.data),
     refetchOnWindowFocus: false,
@@ -64,7 +58,9 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
   const [filteredTransactions, setFilteredTransactions] = useState<
     ITransactionsListResponse[] | any[]
   >([]);
-  const totalPages = Math.ceil(transaction_history?.length / itemsPerPage);
+  const totalPages = Math.ceil(
+    wallet_transaction_history?.length / itemsPerPage
+  );
 
   // console.log("data", individual_customers);
 
@@ -81,7 +77,7 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
   };
 
   const startIndex = (page - 1) * itemsPerPage;
-  const currentItems = transaction_history?.slice(
+  const currentItems = wallet_transaction_history?.slice(
     startIndex,
     startIndex + itemsPerPage
   );
@@ -99,13 +95,13 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
         const data = currentItems.filter(
           (item) =>
             item.category?.toLowerCase().includes(search) ||
-            item.address?.toLowerCase()?.includes(search) ||
+            item.amount?.toLowerCase()?.includes(search) ||
             item.type?.toLowerCase()?.includes(search)
         );
 
         setFilteredTransactions(data || []);
       } else {
-        setFilteredTransactions(transaction_history);
+        setFilteredTransactions(wallet_transaction_history);
       }
     }
   }, [searchQuery, currentItems?.length]);
@@ -114,7 +110,7 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
     <div className="w-full ">
       <div className="mb-2 w-full p-4 md:p-5 rounded-lg flex justify-between items-center gap-4 bg-white md:flex-nowrap flex-wrap">
         <div className="flex justify-start items-center gap-7 min-w-max">
-          <h2 className="font-semibold text-base lg:text-lg text-neutral-900 min-w-max">
+          <h2 className="font-semibold text-base xl:text-lg text-neutral-900 min-w-max w-full">
             Transaction History
           </h2>
 
@@ -147,61 +143,6 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
           </div> */}
       </div>
 
-      <div className="mb-2 w-full p-4 md:p-5 rounded-lg flex justify-between items-center gap-4 bg-white md:flex-nowrap flex-wrap">
-        <div className="w-full flex justify-start items-center gap-4 font-medium font-gilroy">
-          <button
-            onClick={() => setFilter("all")}
-            className={`${
-              filter === "all"
-                ? "bg-primary100 text-primary_success"
-                : "text-neutral-300"
-            } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base lg:text-lg`}
-          >
-            All
-          </button>
-          <button
-            onClick={() => setFilter("completed")}
-            className={`${
-              filter === "completed"
-                ? "bg-primary100 text-primary_success"
-                : "text-neutral-400"
-            } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base lg:text-lg`}
-          >
-            Completed
-          </button>
-          <button
-            onClick={() => setFilter("pending")}
-            className={`${
-              filter === "pending"
-                ? "bg-primary100 text-primary_success"
-                : "text-neutral-400"
-            } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base lg:text-lg`}
-          >
-            Pending
-          </button>
-          <button
-            onClick={() => setFilter("missed")}
-            className={`${
-              filter === "missed"
-                ? "bg-primary100 text-primary_success"
-                : "text-neutral-400"
-            } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base lg:text-lg`}
-          >
-            Missed
-          </button>
-        </div>
-
-        <div className="flex justify-start items-center gap-2">
-          <button
-            onClick={onOpenModal}
-            className="text-sm md:text-base flex justify-start flex-nowrap min-w-max items-center gap-2 bg-primary text-white h-12 px-4 rounded-lg ease transition-all duration-200 hover:opacity-55"
-          >
-            <GoPlus />
-            <p className="">Recycle now</p>
-          </button>
-        </div>
-      </div>
-
       <div className="w-full overflow-x-auto">
         <table className="w-full min-w-max whitespace-nowrap overflow-hidden px-4 md:px-5 py-4 bg-white rounded-lg">
           <thead className="text-neutrals500 text-xs sm:text-sm md:text-base  border-b border-neutrals100 rounded-t-lg">
@@ -212,11 +153,11 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
                   className="flex justify-start items-center gap-2"
                 >
                   <input className="h-4 w-4 rounded-lg bg-transparent border" />
-                  <p>Transaction ID</p>
+                  <p>Tranaction ID</p>
                   <LuChevronsUpDown role="button" />
                 </div>
               </th>
-              <th className="p-3">
+              <th className="p-3 font-normal">
                 <div
                   title="Sort by customer"
                   className="flex justify-start items-center gap-2"
@@ -231,7 +172,7 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
                   title="Sort by address"
                   className="flex justify-start items-center gap-2"
                 >
-                  <p>Address</p>
+                  <p>Amount</p>
                   <LuChevronsUpDown role="button" />
                 </div>
               </th>
@@ -249,7 +190,7 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
               <th className="p-3 font-normal">
                 <p>Status</p>
               </th>
-              <th className="px-4 py-2 rounded-tr-xl"></th>
+              {/* <th className="px-4 py-2 rounded-tr-xl"></th> */}
             </tr>
           </thead>
           <tbody>
@@ -262,8 +203,8 @@ const TransactionHistoryTable = ({ onOpenModal }: ITable) => {
                   <p>{item?.category}</p>
                 </td>
                 <td className="px-2 py-4">{item?.type || "N/A"}</td>
-                <td className="px-2 py-4">{item?.address || "N/A"}</td>
-                <td className="px-2 py-4">{item?.address || "N/A"}</td>
+                <td className="px-2 py-4">{item?.amount || "N/A"}</td>
+                <td className="px-2 py-4">{item?.date || "N/A"}</td>
                 <td className="px-2 py-4 text-center flex justify-center items-center">
                   <p
                     className={`${

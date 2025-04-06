@@ -15,11 +15,11 @@ export default function IndividualUsers() {
   return (
     <AdminAuthWrapper>
       <div className="w-full">
-        <h1 className="font-clash_display_semibold text-neutral-700 text-base md:text-lg xl:text-xl mt-7">
+        <h1 className="_semibold text-neutral-700 text-base md:text-lg xl:text-xl mt-7">
           Admin management
         </h1>
 
-        <div className="w-full flex justify-start items-center bg-white p-3 md:p-4 mt-4 rounded-lg font-clash_display_medium">
+        <div className="w-full flex justify-start items-center bg-white p-3 md:p-4 mt-4 rounded-lg _medium">
           <button
             onClick={() => setActive(1)}
             className={`${

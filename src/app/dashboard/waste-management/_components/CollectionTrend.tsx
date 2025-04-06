@@ -43,9 +43,9 @@ const CollectionTrend = () => {
   const currentItems = trends.slice(startIndex, startIndex + itemsPerPage);
 
   return (
-    <div className="pb-4 p-4 w-full font-clash_display bg-white rounded-lg">
+    <div className="pb-4 p-4 w-full  bg-white rounded-lg">
       <div className="w-full flex justify-between items-center gap-3">
-        <h2 className="font-clash_display_medium text-neutral-700 text-sm sm:text-base md:text-lg w-full text-left">
+        <h2 className="_medium text-neutral-700 text-sm sm:text-base md:text-lg w-full text-left">
           Collection trend
         </h2>
 
@@ -62,10 +62,10 @@ const CollectionTrend = () => {
         {currentItems.map((item, index) => (
           <div className="w-full" key={index}>
             <div className="flex justify-between items-center gap-3 mb-2">
-              <p className="font-clash_display_medium text-neutrals700 text-sm md:text-base">
+              <p className="_medium text-neutrals700 text-sm md:text-base">
                 {item.name}
               </p>
-              <p className="font-clash_display text-neutrals700 text-sm">
+              <p className=" text-neutrals700 text-sm">
                 {formatCurrency(item.amount)} kg
               </p>
             </div>
