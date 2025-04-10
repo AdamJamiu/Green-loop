@@ -15,7 +15,9 @@ const Page = () => {
   const [password, setPassword] = useState<string>("");
   const navigate = useRouter();
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
     try {
       setLoading(true);
 
@@ -67,7 +69,10 @@ const Page = () => {
       </div>
 
       <div className="h-full w-full col-span-8 flex flex-col justify-center items-center overflow-y-auto">
-        <section className="flex justify-center items-start w-full max-w-md flex-col h-full p-4 md:p-0">
+        <form
+          onSubmit={handleSubmit}
+          className="flex justify-center items-start w-full max-w-md flex-col h-full p-4 md:p-0"
+        >
           <h3 className="font-medium text-2xl sm:text-3xl">Login</h3>
           <p className="font-satoshi_Variable mt-2">
             Enter your credentials below to sign in to your account
@@ -81,6 +86,8 @@ const Page = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 label="Email address"
+                required
+                disabled={loading}
               />
 
               <AppInput
@@ -89,6 +96,8 @@ const Page = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 label="Password"
+                required
+                disabled={loading}
               />
               <Link
                 href="/forgot-password"
@@ -109,7 +118,7 @@ const Page = () => {
           <div className="w-full flex justify-between items-center gap-5 mt-14">
             <button
               disabled={loading}
-              onClick={handleSubmit}
+              type="submit"
               className="px-4 py-2 rounded-3xl bg-primary_green text-white hover:bg-primary_success ease transition-all disabled:opacity-45"
             >
               Login
@@ -132,7 +141,7 @@ const Page = () => {
               Sign up here
             </Link>
           </div>
-        </section>
+        </form>
       </div>
     </div>
   );

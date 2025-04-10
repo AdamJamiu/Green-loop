@@ -10,7 +10,7 @@ import { usePathname, useRouter } from "next/navigation";
 import Menu from "../ui/Menu";
 import { sidebarItems } from "@/data/sidebar";
 import Image from "next/image";
-import johnson from "../../../images/johnson.svg";
+import userImg from "../../../images/user.svg";
 
 const Navbar = () => {
   const [isNotificationMenu, setIsNotificationMenu] = useState(false);
@@ -122,13 +122,15 @@ const Navbar = () => {
             isOpen={isProfileMenu}
             setIsOpen={setIsProfileMenu}
             MenuIcon={
-              <Image
-                width={33}
-                height={33}
-                src={johnson}
-                alt="avatar"
-                role="button"
-              />
+              <button className="p-2 relative rounded-full hover:bg-neutral-100 active:bg-neutral-200 focus:bg-neutral-100 ease transition-all">
+                <Image
+                  width={25}
+                  height={25}
+                  src={userImg}
+                  alt="avatar"
+                  role="button"
+                />
+              </button>
             }
             className="w-[300px] py-7"
             Content={
@@ -136,7 +138,7 @@ const Navbar = () => {
                 <Image
                   width={30}
                   height={30}
-                  src={johnson}
+                  src={userImg}
                   alt="avatar"
                   className="h-12 w-12 md:w-14 md:h-14"
                 />

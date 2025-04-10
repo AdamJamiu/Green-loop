@@ -10,6 +10,7 @@ export type TAppInput = {
   label: string;
   name?: string;
   required?: boolean;
+  disabled?: boolean;
   type?:
     | "text"
     | "datepicker"
@@ -32,6 +33,7 @@ const AppInput = ({
   className,
   name,
   required = false,
+  disabled = false,
 }: TAppInput) => {
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [isPassword, setIsPassword] = useState(true);
@@ -56,6 +58,7 @@ const AppInput = ({
         {label}
       </p>
       <input
+        disabled={disabled}
         name={name}
         required={required}
         type={type === "password" && !isPassword ? "text" : type}
