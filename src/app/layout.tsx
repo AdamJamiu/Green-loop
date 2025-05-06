@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import "react-datepicker/dist/react-datepicker.css";
 import { ToastContainer } from "react-toastify";
 import ReactQueryProvider from "./components/provider/ReactQueryProvider";
 

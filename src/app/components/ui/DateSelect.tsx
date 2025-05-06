@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { IoChevronDown } from "react-icons/io5";
+import DatePicker from "react-datepicker";
 
 export interface IOption {
   label: string;
@@ -9,17 +10,15 @@ export interface IOption {
 }
 
 interface SelectProps {
-  options: IOption[];
-  selected: IOption | null;
-  onChange: (option: IOption) => void;
+  selected: Date | null;
+  onChange: (value: Date) => void;
   placeholder?: string;
   label?: string;
   defaultValue?: string;
   Icon?: React.ReactNode;
 }
 
-const Select = ({
-  options = [],
+const DateSelect = ({
   selected,
   onChange,
   placeholder,
@@ -28,7 +27,17 @@ const Select = ({
   Icon,
 }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const today: any = new Date().toISOString().split("T")[0];
+
   const selectRef = useRef<HTMLDivElement | null>(null);
+
+  function formatDateToReadable(date: Date) {
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  }
 
   // Handle click outside to close
   useEffect(() => {
@@ -52,14 +61,14 @@ const Select = ({
       {/* Select Box */}
       <div
         className={`${
-          isOpen || selected?.value ? "bg-gray-50" : ""
+          isOpen || selected ? "bg-gray-50" : ""
         } ease transition-all duration-200 flex items-center justify-between w-full p-3 border border-gray-300 rounded-lg cursor-pointer shadow-sm hover:border-gray-400 relative`}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className={selected?.label ? "" : "text-neutrals500"}>
-          {selected?.label
-            ? selected.label
-            : defaultValue || placeholder || "Select an option"}
+        <span className={selected ? "" : "text-neutrals500"}>
+          {selected
+            ? formatDateToReadable(selected)
+            : placeholder || "Select date"}
         </span>
         {Icon ? (
           Icon
@@ -74,37 +83,23 @@ const Select = ({
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <ul className="absolute w-full mt-2 bg-white border border-gray-200 rounded-lg shadow-lg max-h-48 overflow-y-auto z-10">
-          {options.length < 1 ? (
-            <li
-              className="px-4 py-2 cursor-pointer hover:bg-gray-100 text-center text-gray-500"
-              onClick={() => {
-                setIsOpen(false);
-              }}
-            >
-              No options
-            </li>
-          ) : null}
-          {options.map((option) => (
-            <li
-              key={option.value}
-              className={`${
-                selected?.value === option.value
-                  ? "bg-gray-100 font-medium text-black"
-                  : "text-gray-500"
-              } px-4 py-2 cursor-pointer hover:bg-gray-100`}
-              onClick={() => {
-                onChange(option);
-                setIsOpen(false);
-              }}
-            >
-              {option.label}
-            </li>
-          ))}
-        </ul>
+        <div className="p-2 absolute top-20 w-full z-[50] shadow-md flex justify-stretch items-stretch">
+          <DatePicker
+            selected={selected}
+            onChange={(date) => {
+              onChange(date);
+              // if (selected) {
+              setIsOpen(false);
+              // }
+            }}
+            inline
+            minDate={today}
+            className="!border-none !rounded-lg !shadow-md h-full"
+          />
+        </div>
       )}
     </div>
   );
 };
 
-export default Select;
+export default DateSelect;

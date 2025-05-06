@@ -2,8 +2,26 @@
 
 import { waste_recycled } from "@/data/dashboard";
 import { Bar, BarChart, CartesianGrid, Tooltip, XAxis, YAxis } from "recharts";
+import { TCustomerSchedulesResponse } from "../schedule-recycle/_components/types";
+import { adminCaller } from "@/interceptors";
+import { useQuery } from "@tanstack/react-query";
 
 const WasteRecycleChart = () => {
+  const { data: recycleschedules, isLoading } = useQuery<
+    TCustomerSchedulesResponse[]
+  >({
+    queryKey: ["getcustomerschedules", status],
+    queryFn: async () =>
+      adminCaller
+        .post("v1/recycleschedules/getcustomerschedules", {
+          ...(status && { status }),
+        })
+        .then((res) => res.data?.data),
+    refetchOnWindowFocus: false,
+  });
+
+  console.log("recycleschedules", recycleschedules);
+
   return (
     <section className="w-full pt-8 h-max">
       <div className="w-full bg-white rounded-lg p-4 h-max">

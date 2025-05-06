@@ -1,0 +1,24 @@
+export type TCustomerSchedulesResponse = {
+  categories: string;
+  collectorEmail: string;
+  collectorId: string;
+  collectorName: string;
+  collectorPhone: string;
+  customerEmail: string;
+  customerId: string;
+  customerImageUri: string;
+  customerName: string;
+  customerPhone: string;
+  dropOffAddress: string;
+  id: string;
+  lga: string;
+  pickupAddress: string;
+  recycleDate: string;
+  recycleType: string;
+  state: string;
+  status: string;
+  subCategories: string;
+  totalPoints: 0;
+  totalWeight: number;
+  zone: string;
+};

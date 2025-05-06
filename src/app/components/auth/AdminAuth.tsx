@@ -18,7 +18,7 @@ const AdminAuthWrapper = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <div className="relative bg-neutralBase min-h-screen px-4 py-20 sm:px-10 sm:py-24 md:py-32 md:pl-10 md:pr-8 lg:px-4 lg:pl-16 2xl:pl-20 lg:ml-[200px]">
+    <div className="relative bg-neutralBase min-h-screen px-4 py-20 sm:px-10 sm:py-24 md:py-32 xl:pl-16 md:pr-8 lg:px-4 lg:pl-7 2xl:pl-20 xl:ml-[200px]">
       {children}
     </div>
   );

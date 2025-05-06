@@ -41,6 +41,7 @@ const AppInput = ({
   return (
     <div
       onFocus={() => setIsFocused(true)}
+      onClick={() => setIsFocused(true)}
       onBlur={() => setIsFocused(false)}
       className={`${
         isFocused ? "ring-gray-500 bg-gray-50" : "ring-transparent"

@@ -12,7 +12,7 @@ export default function Page() {
         <div className="w-full sm:col-span-1 lg:col-span-2 xl:col-span-3">
           <RecycleNow />
         </div>
-        <div className="w-full col-span-1 lg:col-span-2">
+        <div className="w-full col-span-1 xl:col-span-2">
           <RecycleTrend />
         </div>
       </div>

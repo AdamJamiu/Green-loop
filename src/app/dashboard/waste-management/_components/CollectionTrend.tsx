@@ -6,6 +6,8 @@ import { formatCurrency } from "@/app/utils/utils";
 import ProgressBar from "../../_components/Progress";
 import Select, { IOption } from "@/app/components/ui/Select";
 import { trends } from "@/data/dashboard";
+import { useQuery } from "@tanstack/react-query";
+import { adminCaller } from "@/interceptors";
 
 const options = [
   {
@@ -38,6 +40,15 @@ const CollectionTrend = () => {
       setPage((prev) => prev - 1);
     }
   };
+
+  const { data, isLoading } = useQuery({
+    queryKey: ["collection-trends"],
+    queryFn: async () =>
+      adminCaller.get("dashboard/collectiontrend").then((res) => res.data),
+    refetchOnWindowFocus: false,
+  });
+
+  console.log("collection trends", data);
 
   const startIndex = (page - 1) * itemsPerPage;
   const currentItems = trends.slice(startIndex, startIndex + itemsPerPage);

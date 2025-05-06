@@ -1,66 +1,58 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MdOutlineChevronLeft, MdOutlineChevronRight } from "react-icons/md";
 import { LuChevronsUpDown } from "react-icons/lu";
-import { GoPlus } from "react-icons/go";
 import { useQuery } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
 import { adminCaller } from "@/interceptors";
 import LoadingSkeleton from "@/app/components/ui/LoadingSkeleton";
 import Select from "@/app/components/ui/Select";
 import { transaction_history } from "@/data/dashboard";
+import { TCustomerSchedulesResponse } from "./types";
 
-interface ITable {
-  onOpenModal: () => void;
-  data: any[];
-}
+type ScheduleItem = {
+  [key: string]: string | number | Date | undefined;
+};
 
-interface ITransactionsListResponse {
-  id: string;
-  userName: string;
-  fullName: string;
-  phoneNumber: string;
-  address: string;
-  role: null;
-  userType: string;
-  firstName: string;
-  lastName: string;
-  staffCode: string;
-  email: string;
-  isActive: boolean;
-  imageUrl: string;
-  nearestBusStop: string;
-  lga: string;
-  referralCount: number;
-}
+const RecycleHistoryTable = () => {
+  const itemsPerPage = 10;
+  const [sortKey, setSortKey] = useState<string | null>(null);
+  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 
-const RecycleHistoryTable = ({ onOpenModal }: ITable) => {
-  const itemsPerPage = 8;
-  const [searchQuery, setSearchQuery] = useState("");
-  const [filter, setFilter] = useState("all");
   const [page, setPage] = useState<number>(1);
+  const [status, setStatus] = useState<
+    | "Submitted"
+    | "Completed"
+    | "Accept"
+    | "Accepted"
+    | "Confirmed"
+    | "Assigned"
+    | null
+  >(null);
   const [schedule, setSchedule] = useState({ value: "", label: "" });
-  // const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openMenuId, setOpenMenuId] = useState<number | null>(null);
-  const navigate = useRouter();
 
-  const { data: transaction_histor = [], isLoading } = useQuery<
-    ITransactionsListResponse[]
+  const { data: recycleschedules, isLoading } = useQuery<
+    TCustomerSchedulesResponse[]
   >({
-    queryKey: ["RecycleHistory"],
+    queryKey: ["getcustomerschedules", status],
     queryFn: async () =>
-      adminCaller.get("transactions").then((res) => res.data?.data),
+      adminCaller
+        .post("v1/recycleschedules/getcustomerschedules", {
+          ...(status && { status }),
+        })
+        .then((res) => res.data?.data),
     refetchOnWindowFocus: false,
-    enabled: false,
   });
 
-  const [filteredTransactions, setFilteredTransactions] = useState<
-    ITransactionsListResponse[] | any[]
-  >([]);
+  console.log("recycleschedules", recycleschedules);
+
   const totalPages = Math.ceil(transaction_history?.length / itemsPerPage);
 
-  // console.log("data", individual_customers);
+  const startIndex = (page - 1) * itemsPerPage;
+  const currentItems = (recycleschedules || [])?.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
 
   const handleNextPage = () => {
     if (page < totalPages) {
@@ -74,38 +66,32 @@ const RecycleHistoryTable = ({ onOpenModal }: ITable) => {
     }
   };
 
-  const startIndex = (page - 1) * itemsPerPage;
-  const currentItems = transaction_history?.slice(
-    startIndex,
-    startIndex + itemsPerPage
-  );
+  const sortedItems = [...(recycleschedules || [])].sort(
+    (a: ScheduleItem, b: ScheduleItem) => {
+      if (!sortKey) return 0;
 
-  const handleViewCustomer = (id: string) => {
-    navigate.push(`/dashboard/user-management/${id}`);
-    setOpenMenuId(null);
-  };
+      const aVal = a[sortKey] ?? "";
+      const bVal = b[sortKey] ?? "";
 
-  useEffect(() => {
-    const search = searchQuery.toLowerCase();
-
-    if (currentItems?.length > 0) {
-      if (searchQuery?.length > 0) {
-        const data = currentItems.filter(
-          (item) =>
-            item.category?.toLowerCase().includes(search) ||
-            item.address?.toLowerCase()?.includes(search) ||
-            item.type?.toLowerCase()?.includes(search)
-        );
-
-        setFilteredTransactions(data || []);
+      if (sortOrder === "asc") {
+        return aVal > bVal ? 1 : aVal < bVal ? -1 : 0;
       } else {
-        setFilteredTransactions(transaction_history);
+        return aVal < bVal ? 1 : aVal > bVal ? -1 : 0;
       }
     }
-  }, [searchQuery, currentItems?.length]);
+  );
+
+  const handleSort = (key: string) => {
+    if (sortKey === key) {
+      setSortOrder((prev) => (prev === "asc" ? "desc" : "asc"));
+    } else {
+      setSortKey(key);
+      setSortOrder("asc");
+    }
+  };
 
   return (
-    <div className="w-full ">
+    <div className="w-full gilroy">
       <div className="mb-2 w-full p-4 md:p-5 rounded-lg flex justify-between items-center gap-4 bg-white md:flex-nowrap flex-wrap">
         <div className="flex justify-start items-center gap-7 min-w-max">
           <h2 className="font-semibold text-base xl:text-lg text-neutral-900 min-w-max w-full">
@@ -129,24 +115,14 @@ const RecycleHistoryTable = ({ onOpenModal }: ITable) => {
             />
           </div>
         </div>
-        {/* 
-          <div className="flex justify-start items-center gap-2">
-            <button
-              onClick={onOpenModal}
-              className="text-sm md:text-base flex justify-start items-center gap-2 bg-primary text-white h-12 px-4 rounded-lg ease transition-all duration-200 hover:opacity-55"
-            >
-              <GoPlus />
-              <p className="">Add user</p>
-            </button>
-          </div> */}
       </div>
 
       <div className="mb-2 w-full p-4 md:p-5 rounded-lg flex justify-between items-center gap-4 bg-white md:flex-nowrap flex-wrap">
-        <div className="w-full flex justify-start items-center gap-4 font-medium font-gilroy">
+        <div className="w-full flex justify-start items-center gap-4 font-medium">
           <button
-            onClick={() => setFilter("all")}
+            onClick={() => setStatus(null)}
             className={`${
-              filter === "all"
+              status === null
                 ? "bg-primary100 text-primary_success"
                 : "text-neutral-400"
             } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base xl:text-lg`}
@@ -154,55 +130,70 @@ const RecycleHistoryTable = ({ onOpenModal }: ITable) => {
             All
           </button>
           <button
-            onClick={() => setFilter("completed")}
+            onClick={() => setStatus("Submitted")}
             className={`${
-              filter === "completed"
+              status === "Submitted"
+                ? "bg-primary100 text-primary_success"
+                : "text-neutral-400"
+            } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base xl:text-lg`}
+          >
+            Submitted
+          </button>
+
+          <button
+            onClick={() => setStatus("Accepted")}
+            className={`${
+              status === "Accepted"
+                ? "bg-primary100 text-primary_success"
+                : "text-neutral-400"
+            } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base xl:text-lg`}
+          >
+            Accepted
+          </button>
+
+          <button
+            onClick={() => setStatus("Assigned")}
+            className={`${
+              status === "Assigned"
+                ? "bg-primary100 text-primary_success"
+                : "text-neutral-400"
+            } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base xl:text-lg`}
+          >
+            Assigned
+          </button>
+
+          <button
+            onClick={() => setStatus("Confirmed")}
+            className={`${
+              status === "Confirmed"
+                ? "bg-primary100 text-primary_success"
+                : "text-neutral-400"
+            } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base xl:text-lg`}
+          >
+            Confirmed
+          </button>
+
+          <button
+            onClick={() => setStatus("Completed")}
+            className={`${
+              status === "Completed"
                 ? "bg-primary100 text-primary_success"
                 : "text-neutral-400"
             } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base xl:text-lg`}
           >
             Completed
           </button>
-          <button
-            onClick={() => setFilter("pending")}
-            className={`${
-              filter === "pending"
-                ? "bg-primary100 text-primary_success"
-                : "text-neutral-400"
-            } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base xl:text-lg`}
-          >
-            Pending
-          </button>
-          <button
-            onClick={() => setFilter("missed")}
-            className={`${
-              filter === "missed"
-                ? "bg-primary100 text-primary_success"
-                : "text-neutral-400"
-            } px-4 py-2.5 rounded-lg ease transition-all duration-200 text-base xl:text-lg`}
-          >
-            Missed
-          </button>
         </div>
-
-        {/* <div className="flex justify-start items-center gap-2">
-          <button
-            onClick={onOpenModal}
-            className="text-sm md:text-base flex justify-start flex-nowrap min-w-max items-center gap-2 bg-primary text-white h-12 px-4 rounded-lg ease transition-all duration-200 hover:opacity-55"
-          >
-            <GoPlus />
-            <p className="">Recycle now</p>
-          </button>
-        </div> */}
       </div>
 
       <div className="w-full overflow-x-auto">
         <table className="w-full min-w-max whitespace-nowrap overflow-hidden px-4 md:px-5 py-4 bg-white rounded-lg">
           <thead className="text-neutrals500 text-xs sm:text-sm md:text-base  border-b border-neutrals100 rounded-t-lg">
             <tr className="w-full">
-              <th className="p-3 rounded-tl-xl font-normal">
+              <th className="p-3 rounded-tl-xl font-normal hover:bg-gray-100">
                 <div
-                  title="Sort by Customer ID"
+                  onClick={() => handleSort("categories")}
+                  title="Waste category"
                   className="flex justify-start items-center gap-2"
                 >
                   <input className="h-4 w-4 rounded-lg bg-transparent border" />
@@ -210,9 +201,10 @@ const RecycleHistoryTable = ({ onOpenModal }: ITable) => {
                   <LuChevronsUpDown role="button" />
                 </div>
               </th>
-              <th className="p-3 font-normal">
+              <th className="p-3 font-normal hover:bg-gray-100">
                 <div
-                  title="Sort by customer"
+                  onClick={() => handleSort("recycleType")}
+                  title="Sort by Schedule type"
                   className="flex justify-start items-center gap-2"
                 >
                   <p>Schedule type</p>
@@ -220,7 +212,7 @@ const RecycleHistoryTable = ({ onOpenModal }: ITable) => {
                 </div>
               </th>
 
-              <th className="p-3 font-normal">
+              <th className="p-3 font-normal hover:bg-gray-100">
                 <div
                   title="Sort by address"
                   className="flex justify-start items-center gap-2"
@@ -230,79 +222,46 @@ const RecycleHistoryTable = ({ onOpenModal }: ITable) => {
                 </div>
               </th>
 
-              <th className="p-3 font-normal">
-                <div
-                  title="Sort by type"
-                  className="flex justify-start items-center gap-2"
-                >
+              <th className="p-3 font-normal hover:bg-gray-100">
+                <div className="flex justify-start items-center gap-2">
                   <p>Date</p>
-                  <LuChevronsUpDown role="button" />
+                  {/* <LuChevronsUpDown role="button" /> */}
                 </div>
               </th>
 
-              <th className="p-3 font-normal">
-                <p>Status</p>
+              <th className="p-3 font-normal hover:bg-gray-100">
+                <div
+                  onClick={() => handleSort("status")}
+                  title="Sort by Status"
+                  className="flex justify-start items-center gap-2"
+                >
+                  <p>Status</p>
+                  <LuChevronsUpDown role="button" />
+                </div>
               </th>
-              {/* <th className="px-4 py-2 rounded-tr-xl"></th> */}
             </tr>
           </thead>
           <tbody>
-            {filteredTransactions?.map((item, index) => (
+            {sortedItems?.map((item, index) => (
               <tr
                 key={index}
-                className="w-full border-b border-neutrals100 _medium text-neutrals500 text-xs md:text-sm ease transition-all duration-300 hover:bg-gray-100"
+                className="gilroy w-full border-b border-neutrals100 _medium text-neutrals700 text-xs md:text-sm ease transition-all duration-300 hover:bg-gray-100"
               >
-                <td className=" p-4">
-                  <p>{item?.category}</p>
+                <td className="p-4">
+                  <p>{item?.categories}</p>
                 </td>
-                <td className="px-2 py-4">{item?.type || "N/A"}</td>
-                <td className="px-2 py-4">{item?.address || "N/A"}</td>
-                <td className="px-2 py-4">{item?.address || "N/A"}</td>
-                <td className="px-2 py-4 text-center flex justify-center items-center">
+                <td className="p-4">{item?.recycleType || "N/A"}</td>
+                <td className="p-4">
+                  {item?.dropOffAddress || item.pickupAddress || "N/A"}
+                </td>
+                <td className="p-4">{item?.recycleDate || "N/A"}</td>
+                <td className="p-4 text-center flex justify-center items-center">
                   <p
-                    className={`${
-                      item?.status === "completed"
-                        ? "bg-primary100 text-primary_success border-primary_success"
-                        : item?.status === "pending"
-                        ? "bg-warning100 text-warning border-warning"
-                        : item?.status === "missed"
-                        ? "bg-error100 text-error900 border-error900"
-                        : ""
-                    } border-2 rounded-full px-2 py-0.5 capitalize w-fit`}
+                    className={`status-${item.status} border-2 rounded-full font-medium gilroy px-2 py-0.5 capitalize w-fit`}
                   >
                     {item?.status}
                   </p>
                 </td>
-
-                {/* <td className="py-2 px-4">
-                  <Menu
-                    isOpen={openMenuId === index}
-                    setIsOpen={(state) => setOpenMenuId(state ? index : null)}
-                    MenuIcon={
-                      <button className="rounded-full hover:bg-gray-100 focus:bg-gray-100 active:bg-gray-50 ease transition-all duration-300 p-2">
-                        <BsThreeDots color="black" size={23} />
-                      </button>
-                    }
-                    Content={
-                      <div className="w-full  flex flex-col">
-                        <button
-                          onClick={() => handleViewCustomer(item?.id)}
-                          className="text-neutrals900 hover:bg-gray-100 flex justify-start items-center gap-2 text-sm md:text-base p-2 w-full rounded-md"
-                        >
-                          <FaRegEye />
-                          <p>View customer</p>
-                        </button>
-                        <button
-                          // onClick={() => handleViewCustomer()}
-                          className="text-neutrals900 hover:bg-gray-100 flex justify-start items-center gap-2 text-sm md:text-base p-2 w-full rounded-md"
-                        >
-                          <MdOutlineEdit />
-                          <p>Edit customer</p>
-                        </button>
-                      </div>
-                    }
-                  />
-                </td> */}
               </tr>
             ))}
 
@@ -310,11 +269,7 @@ const RecycleHistoryTable = ({ onOpenModal }: ITable) => {
 
             {currentItems.length < 1 && !isLoading ? (
               <tr className="w-full border-b border-neutrals100 _medium text-neutrals500">
-                <td
-                  className="px-2 py-4 text-center text-lg"
-                  colSpan={5}
-                  rowSpan={5}
-                >
+                <td className="p-4 text-center text-lg" colSpan={5} rowSpan={5}>
                   No transactions found
                 </td>
               </tr>
@@ -322,8 +277,8 @@ const RecycleHistoryTable = ({ onOpenModal }: ITable) => {
           </tbody>
         </table>
 
-        {currentItems.length > 1 && (
-          <div className="w-full flex justify-end items-center gap-3 mt-5 bg-white rounded-lg p-4">
+        {currentItems.length > itemsPerPage && (
+          <div className="w-full flex justify-end items-center gap-3 mt-5 bg-white rounded-lg p-4 sticky right-0 left-0">
             <button
               onClick={handlePreviousPage}
               disabled={page === 1}

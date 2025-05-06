@@ -34,7 +34,7 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <aside className="fixed left-0 top-0 bottom-0 bg-primary pb-10 pt-6 w-[250px] z-20 lg:block hidden h-screen gilroy">
+    <aside className="fixed left-0 top-0 bottom-0 bg-primary pb-10 pt-6 w-[250px] z-20 xl:block hidden h-screen gilroy">
       <div className="w-full h-full">
         <div className="mb-7 flex justify-start items-center gap-3 w-full pl-4">
           <Image width={35} height={35} src={logo} alt="greenloop" />

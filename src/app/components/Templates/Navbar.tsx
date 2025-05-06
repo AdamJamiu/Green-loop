@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { BsBell } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -42,7 +42,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed left-0 lg:left-[250px] right-0 top-0 z-50 bg-white py-1 gilroy">
+    <nav className="fixed left-0 xl:left-[250px] right-0 top-0 z-50 bg-white py-1 gilroy">
       <div className="flex justify-between items-center px-6 py-3 md:py-5 md:px-8 lg:px-8">
         <h1 className="text-neutrals900 font-bold text-lg md:text-xl">
           {sidebarItems.find((item) => item.href.includes(pathname))?.label ||
@@ -163,7 +163,7 @@ const Navbar = () => {
           <button
             // onClick={handleToggleSidebar}
             // onClick={() => setIsSidebarOpen(true)}
-            className="p-2 relative rounded-full hover:bg-neutral-100 active:bg-neutral-200 focus:bg-neutral-100 ease transition-all block lg:hidden"
+            className="p-2 relative rounded-full hover:bg-neutral-100 active:bg-neutral-200 focus:bg-neutral-100 ease transition-all block xl:hidden"
           >
             <GiHamburgerMenu className="text-neutrals900" size={20} />
           </button>
